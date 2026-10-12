@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="burgundy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Feast — Platform Services & Food Truck Solutions</title>
+  <meta name="description" content="Explore Food Feast's premier mobile food truck services: private and corporate event catering booking, real-time street food discovery, and vendor growth management.">
+  <meta name="keywords" content="food truck services, food truck catering booking, corporate event catering, wedding food trucks, street food discovery, food truck vendor management">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="Services.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <a href="index.html" class="brand-logo" id="brandLogo" aria-label="Food Feast Home">
+        <div class="logo-emblem">
+          <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          
+          <li class="nav-item dropdown" id="homeDropdownItem">
+            <a href="index.html" class="nav-link dropdown-toggle" id="homeDropdownToggle" aria-haspopup="true" aria-expanded="false">
+              HOME <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu" id="homeDropdownMenu">
+              <li>
+                <a href="index.html" class="dropdown-link" id="navHome1">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 1 (Signature)</span>
+                    <span class="drop-desc">Hero BBQ Truck & Daily Specials</span>
+                  </div>
+                  <span class="preview-tag">Classic</span>
+                </a>
+              </li>
+              <li>
+                <a href="Home 2.html" class="dropdown-link" id="navHome2">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 2 (Live Grid)</span>
+                    <span class="drop-desc">Interactive Radar & Cuisine Finder</span>
+                  </div>
+                  <span class="preview-tag">Explore</span>
+                </a>
+              </li>
+              <li>
+                <a href="About.html" class="dropdown-link" id="navAbout">
+                  <div class="drop-item-content">
+                    <span class="drop-title">About Us (Our Chefs)</span>
+                    <span class="drop-desc">Mission, Heritage & Chef Roster</span>
+                  </div>
+                  <span class="preview-tag">Explore</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="About.html" class="nav-link" id="navChefs">OUR CHEFS</a>
+          </li>
+          <li class="nav-item">
+            <a href="Services.html" class="nav-link active" id="navServices">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a href="Contact.html" class="nav-link" id="navContact">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" id="navDashboard">
+              DASHBOARD <span class="nav-live-dot"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        
+        <button class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+        </button>
+
+        <button class="action-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle Text Direction" title="Switch Direction (LTR / RTL)">
+          <span id="rtlText">RTL</span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary login-btn" id="loginBtn" aria-label="Go to Login Page">
+          <i class="fa-solid fa-user-circle"></i>
+          <span>LOGIN</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-text">
+        <span class="brand-title">FOOD FEAST</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+      <li><a href="Home 2.html" class="mobile-nav-link">Home 2</a></li>
+      <li><a href="About.html" class="mobile-nav-link">About (our Chefs)</a></li>
+      <li><a href="Services.html" class="mobile-nav-link active">Services</a></li>
+      <li><a href="Contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn btn-primary w-100 mobile-login-btn" id="mobileLoginBtn">
+        <i class="fa-solid fa-user-circle"></i>
+        <span>Login / Register</span>
+      </a>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <svg class="svg-defs-hidden" aria-hidden="true" width="0" height="0" style="position:absolute; width:0; height:0; overflow:hidden;">
+      <defs>
+        <clipPath id="heroCurvedDiagonalClip" clipPathUnits="objectBoundingBox">
+          <path d="M 0.22,0 C 0.16,0.32 0.08,0.68 0.0,1 L 1,1 L 1,0 Z" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <section class="services-hero-section" id="services-hero">
+      
+      <div class="container services-hero-container">
+        
+        <div class="services-hero-content animate-from-left">
+          
+          <div class="services-hero-badge">
+            <span class="pulse-beacon"></span>
+            <span>WHAT WE BRING TO THE TABLE</span>
+          </div>
+
+          <h1 class="services-hero-title">
+            Good Food. Great Gatherings.<br>
+            <span class="text-gold-gradient">Unforgettable Experiences.</span>
+          </h1>
+
+          <div class="section-gold-dash"></div>
+
+          <p class="services-hero-lead">
+            Food Feast bridges the gap between hungry food lovers, event hosts, and world-class mobile pitmasters. Whether you're craving neighborhood pop-up tacos or arranging a 2,000-guest festival, we deliver exceptional food experiences on wheels.
+          </p>
+
+          <div class="services-hero-actions">
+            <a href="#core-services" class="btn btn-primary btn-lg">
+              <span>Explore Our Services</span> <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <a href="Services Details.html?service=event-booking" class="btn btn-outline-white btn-lg">
+              <i class="fa-solid fa-calendar-check"></i> <span>Book a Food Truck</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-strip">
+            <div class="trust-metric-item">
+              <strong>520+</strong>
+              <span>Certified Trucks</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-metric-item">
+              <strong>28</strong>
+              <span>Metro Regions</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-metric-item">
+              <strong>99.4%</strong>
+              <span>Event Punctuality</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="services-hero-image-pane animate-from-right">
+        
+        <div class="hero-clipped-image-layer">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80" alt="Gourmet food truck fleet catering an outdoor event" class="hero-fullbleed-img">
+          
+          <div class="hero-image-overlay-vignette"></div>
+        </div>
+
+        <div class="hero-diagonal-divider-line" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="hero-divider-svg">
+            <path d="M 22,0 C 16,32 8,68 0,100" fill="none" stroke="var(--accent-yellow)" stroke-width="2.5" vector-effect="non-scaling-stroke" />
+          </svg>
+          <div class="hero-divider-glow"></div>
+        </div>
+
+        <div class="hero-corner-status-badge">
+          <div class="corner-status-dot"></div>
+          <span class="corner-status-text"><strong>520+</strong> Certified Fleet Active</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-compact services-occasions-section" id="occasions">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">VERSATILE EVENT SOLUTIONS</span>
+          <h2 class="section-title-large">THE PERFECT TRUCK FOR EVERY OCCASION</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            From intimate backyard celebrations to 2,500-attendee corporate conventions, we match your venue with verified culinary masters.
+          </p>
+        </div>
+
+        <div class="occasions-editorial-grid">
+          
+          <div class="occasion-feature-stage" id="occasionFeatureStage">
+            <div class="occasion-img-box">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" alt="Corporate office catering with gourmet street food trucks" id="occasionFeaturedImg" class="occasion-featured-img">
+              <div class="occasion-badge" id="occasionBadge">POPULAR FOR CORPORATE</div>
+            </div>
+
+            <div class="occasion-feature-content">
+              <div class="occasion-meta-row">
+                <span class="occasion-capacity" id="occasionCapacity"><i class="fa-solid fa-users"></i> 50 – 2,500+ Guests</span>
+                <span class="occasion-turnaround" id="occasionTurnaround"><i class="fa-solid fa-stopwatch"></i> 45s Plate Speed</span>
+              </div>
+              
+              <h3 class="occasion-title" id="occasionTitle">Corporate Events & Office Catering</h3>
+              
+              <p class="occasion-desc" id="occasionDesc">
+                Boost company morale, impress VIP clients, or celebrate product launches with multi-truck catering lines. We handle power hookups, synchronized lunch windows, and custom dietary accommodations seamlessly.
+              </p>
+
+              <div class="occasion-perks-list" id="occasionPerks">
+                <div class="perk-tag"><i class="fa-solid fa-check"></i> Direct invoice billing & W9 compliance</div>
+                <div class="perk-tag"><i class="fa-solid fa-check"></i> Turnkey waste & generator management</div>
+                <div class="perk-tag"><i class="fa-solid fa-check"></i> Synchronized multi-truck fleets</div>
+              </div>
+
+              <div class="occasion-action-row">
+                <a href="Services Details.html?service=event-booking" class="btn btn-primary btn-occasion-cta" id="occasionCtaBtn">
+                  <span>Plan Your Event</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button type="button" class="btn btn-outline-white btn-occasion-cta" onclick="openInquiryModal('corporate')">
+                  <i class="fa-solid fa-file-invoice"></i> <span>Get Quick Quote</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="occasion-selector-stack">
+            
+            <div class="occasion-select-card" data-occasion="private" onclick="switchOccasion('private')">
+              <div class="occasion-select-icon">
+                <i class="fa-solid fa-champagne-glasses"></i>
+              </div>
+              <div class="occasion-select-info">
+                <div class="select-header">
+                  <h4>Private Parties & Celebrations</h4>
+                  <span class="select-tag">20 – 150 Guests</span>
+                </div>
+                <p>Birthdays, backyard luaus, graduations, anniversaries, and block parties.</p>
+              </div>
+              <div class="select-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+            <div class="occasion-select-card active" data-occasion="corporate" onclick="switchOccasion('corporate')">
+              <div class="occasion-select-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <div class="occasion-select-info">
+                <div class="select-header">
+                  <h4>Corporate Events & Office Catering</h4>
+                  <span class="select-tag">50 – 2,500+ Guests</span>
+                </div>
+                <p>Quarterly offsites, tech conventions, employee appreciation, and summits.</p>
+              </div>
+              <div class="select-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+            <div class="occasion-select-card" data-occasion="weddings" onclick="switchOccasion('weddings')">
+              <div class="occasion-select-icon">
+                <i class="fa-solid fa-ring"></i>
+              </div>
+              <div class="occasion-select-info">
+                <div class="select-header">
+                  <h4>Weddings, Festivals & Special Gatherings</h4>
+                  <span class="select-tag">100 – 5,000+ Guests</span>
+                </div>
+                <p>Bespoke midnight snack trucks, music festival vendor zones, and charity galas.</p>
+              </div>
+              <div class="select-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+            <div class="occasion-select-card" data-occasion="community" onclick="switchOccasion('community')">
+              <div class="occasion-select-icon">
+                <i class="fa-solid fa-people-roof"></i>
+              </div>
+              <div class="occasion-select-info">
+                <div class="select-header">
+                  <h4>Community & Neighborhood Pop-Ups</h4>
+                  <span class="select-tag">40 – 500 Guests</span>
+                </div>
+                <p>HOA weekend rallies, school sports tournaments, street fairs, and church fundraisers.</p>
+              </div>
+              <div class="select-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+            <div class="occasion-select-card" data-occasion="nightlife" onclick="switchOccasion('nightlife')">
+              <div class="occasion-select-icon">
+                <i class="fa-solid fa-beer-mug-empty"></i>
+              </div>
+              <div class="occasion-select-info">
+                <div class="select-header">
+                  <h4>Brewery & Nightlife Residencies</h4>
+                  <span class="select-tag">30 – 350 Guests</span>
+                </div>
+                <p>Craft breweries, distillery taprooms, rooftop lounges, and weekend pop-up pairings.</p>
+              </div>
+              <div class="select-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+            <div class="occasion-select-card" data-occasion="filmset" onclick="switchOccasion('filmset')">
+              <div class="occasion-select-icon">
+                <i class="fa-solid fa-clapperboard"></i>
+              </div>
+              <div class="occasion-select-info">
+                <div class="select-header">
+                  <h4>Film Sets & Job-Site Concessions</h4>
+                  <span class="select-tag">25 – 800+ Crew</span>
+                </div>
+                <p>On-location movie shoot craft meals, construction sites, and emergency crew dining.</p>
+              </div>
+              <div class="select-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact services-cuisine-section" id="cuisine-discovery">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">GLOBAL STREET GASTRONOMY</span>
+          <h2 class="section-title-large">FIND YOUR KIND OF FLAVOR</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Explore authentic global recipes crafted fresh by certified mobile pitmasters, taqueros, and pizzaiolos.
+          </p>
+        </div>
+
+        <div class="cuisine-filter-bar">
+          <button class="cuisine-pill-btn active" data-cuisine="burgers" onclick="switchCuisine('burgers')">
+            <i class="fa-solid fa-burger"></i> Burgers & Smash
+          </button>
+          <button class="cuisine-pill-btn" data-cuisine="tacos" onclick="switchCuisine('tacos')">
+            <i class="fa-solid fa-pepper-hot"></i> Tacos & Birria
+          </button>
+          <button class="cuisine-pill-btn" data-cuisine="pizza" onclick="switchCuisine('pizza')">
+            <i class="fa-solid fa-pizza-slice"></i> 900° Wood Pizza
+          </button>
+          <button class="cuisine-pill-btn" data-cuisine="asian" onclick="switchCuisine('asian')">
+            <i class="fa-solid fa-bowl-rice"></i> Asian Street Wok
+          </button>
+          <button class="cuisine-pill-btn" data-cuisine="desserts" onclick="switchCuisine('desserts')">
+            <i class="fa-solid fa-ice-cream"></i> Artisan Desserts
+          </button>
+        </div>
+
+        <div class="cuisine-showcase-board" id="cuisineBoard">
+          
+          <div class="cuisine-board-info">
+            <div class="cuisine-eyebrow" id="cuisineEyebrow">HIGH-HEAT MAILLARD CRAFT</div>
+            <h3 class="cuisine-board-title" id="cuisineTitle">Gourmet Smash Burgers & Brioche</h3>
+            <p class="cuisine-board-desc" id="cuisineDesc">
+              Dry-aged Angus patties smashed paper-thin on 550°F cast iron planchas to create crispy lace edges while sealing 100% of rich juices. Topped with house-made smoked bacon marmalade and black truffle aioli.
+            </p>
+
+            <div class="cuisine-details-grid">
+              <div class="cuisine-detail-item">
+                <span class="detail-label">Signature Plate:</span>
+                <strong id="cuisineDishName">Double Truffle Angus Smash</strong>
+              </div>
+              <div class="detail-divider"></div>
+              <div class="cuisine-detail-item">
+                <span class="detail-label">Active Trucks:</span>
+                <strong id="cuisineTruckCount">84 Trucks Mapped</strong>
+              </div>
+            </div>
+
+            <div class="cuisine-tags-wrap" id="cuisineTags">
+              <span class="cuisine-tag-chip">Dry-Aged Angus</span>
+              <span class="cuisine-tag-chip">Butter Toasted Brioche</span>
+              <span class="cuisine-tag-chip">Smoked Truffle Aioli</span>
+              <span class="cuisine-tag-chip">Halal Certified Options</span>
+            </div>
+
+            <div class="cuisine-board-action">
+              <a href="Services Details.html?service=truck-discovery" class="btn btn-primary">
+                <span>Explore Food Trucks</span> <i class="fa-solid fa-compass"></i>
+              </a>
+              <a href="Home 2.html" class="btn btn-outline-white">
+                <i class="fa-solid fa-map-location-dot"></i> <span>View Live Radar</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="cuisine-board-visual">
+            <div class="cuisine-img-frame">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Gourmet double smash burger with melted cheese and crispy edges" id="cuisineImg" class="cuisine-display-img">
+              <div class="cuisine-floating-pill" id="cuisinePill">
+                <i class="fa-solid fa-fire"></i> <span>550° Plancha Crisp</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cuisines-preview-strip">
+          
+          <div class="cuisine-mini-card active" data-cuisine-card="burgers" onclick="switchCuisine('burgers')">
+            <div class="mini-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=400&q=80" alt="Smash Burgers & Angus Patties">
+            </div>
+            <div class="mini-card-info">
+              <strong>Smash Burgers</strong>
+              <small>84 Active Trucks</small>
+            </div>
+          </div>
+
+          <div class="cuisine-mini-card" data-cuisine-card="tacos" onclick="switchCuisine('tacos')">
+            <div class="mini-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=400&q=80" alt="Oaxacan Street Tacos & Birria">
+            </div>
+            <div class="mini-card-info">
+              <strong>Artisan Tacos</strong>
+              <small>92 Active Trucks</small>
+            </div>
+          </div>
+
+          <div class="cuisine-mini-card" data-cuisine-card="pizza" onclick="switchCuisine('pizza')">
+            <div class="mini-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&q=80" alt="Wood-Fired Neapolitan Pizza 900°">
+            </div>
+            <div class="mini-card-info">
+              <strong>Wood Pizza 900°</strong>
+              <small>65 Active Trucks</small>
+            </div>
+          </div>
+
+          <div class="cuisine-mini-card" data-cuisine-card="asian" onclick="switchCuisine('asian')">
+            <div class="mini-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=400&q=80" alt="Asian Street Wok & Steamed Gua Bao">
+            </div>
+            <div class="mini-card-info">
+              <strong>Asian Street Wok</strong>
+              <small>78 Active Trucks</small>
+            </div>
+          </div>
+
+          <div class="cuisine-mini-card" data-cuisine-card="desserts" onclick="switchCuisine('desserts')">
+            <div class="mini-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80" alt="Artisanal Liège Waffles & Gelato">
+            </div>
+            <div class="mini-card-info">
+              <strong>Artisan Desserts</strong>
+              <small>46 Active Trucks</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact services-core-section" id="core-services">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">THREE SPECIALIZED PILLARS</span>
+          <h2 class="section-title-large">EVERYTHING YOU NEED, ALL IN ONE PLACE</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Three specialized platform pillars designed to delight foodies, elevate events, and empower mobile culinary entrepreneurs.
+          </p>
+        </div>
+
+        <div class="core-services-grid">
+          
+          <div class="core-service-card" id="coreCard1">
+            <div class="service-card-header">
+              <span class="service-badge-pill">SERVICE 01</span>
+              <div class="service-icon-wrap"><i class="fa-solid fa-calendar-check"></i></div>
+            </div>
+
+            <div class="service-img-preview">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" alt="Event food truck booking catering" class="service-thumb-img">
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-card-title">EVENT FOOD TRUCK BOOKING</h3>
+              <p class="service-card-desc">
+                Discover and arrange food trucks for parties, corporate gatherings, celebrations, and special events.
+              </p>
+              
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-check"></i> Custom multi-truck lineups</li>
+                <li><i class="fa-solid fa-check"></i> Turnkey power & parking setup</li>
+                <li><i class="fa-solid fa-check"></i> Guaranteed line serving speed</li>
+              </ul>
+            </div>
+
+            <div class="service-card-footer">
+              <a href="Services Details.html?service=event-booking" class="btn btn-primary w-100 btn-view-service">
+                <span>View Service</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="core-service-card" id="coreCard2">
+            <div class="service-card-header">
+              <span class="service-badge-pill">SERVICE 02</span>
+              <div class="service-icon-wrap"><i class="fa-solid fa-compass"></i></div>
+            </div>
+
+            <div class="service-img-preview">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80" alt="Food truck discovery and live menus" class="service-thumb-img">
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-card-title">FOOD TRUCK DISCOVERY & MENUS</h3>
+              <p class="service-card-desc">
+                Explore cuisine options, discover food trucks, review available menus, and find suitable vendors.
+              </p>
+              
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-check"></i> Live real-time GPS radar tracking</li>
+                <li><i class="fa-solid fa-check"></i> Photo menus & dietary filters</li>
+                <li><i class="fa-solid fa-check"></i> Pop-up arrival notifications</li>
+              </ul>
+            </div>
+
+            <div class="service-card-footer">
+              <a href="Services Details.html?service=truck-discovery" class="btn btn-primary w-100 btn-view-service">
+                <span>View Service</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="core-service-card" id="coreCard3">
+            <div class="service-card-header">
+              <span class="service-badge-pill">SERVICE 03</span>
+              <div class="service-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+            </div>
+
+            <div class="service-img-preview">
+              <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=80" alt="Vendor growth management dashboard" class="service-thumb-img">
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-card-title">VENDOR GROWTH & MANAGEMENT</h3>
+              <p class="service-card-desc">
+                Help food truck vendors create their profiles, manage menus, update locations, and monitor orders and earnings.
+              </p>
+              
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-check"></i> High-ticket catering leads</li>
+                <li><i class="fa-solid fa-check"></i> 1-Click route & schedule sync</li>
+                <li><i class="fa-solid fa-check"></i> Sales & customer payout analytics</li>
+              </ul>
+            </div>
+
+            <div class="service-card-footer">
+              <a href="Services Details.html?service=vendor-management" class="btn btn-primary w-100 btn-view-service">
+                <span>View Service</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact services-process-section" id="process">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">TRANSPARENT BOOKING PATHWAY</span>
+          <h2 class="section-title-large">FROM FIRST CLICK TO YOUR NEXT GREAT EXPERIENCE</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            A frictionless, transparent pathway connecting hungry foodies and event hosts directly with verified mobile kitchens.
+          </p>
+        </div>
+
+        <div class="process-track-wrapper">
+          <div class="process-rail-line">
+            <div class="process-beam-pulse"></div>
+          </div>
+
+          <div class="process-steps-grid">
+            
+            <div class="process-step-node">
+              <div class="process-orb-pin">
+                <span class="step-number">01</span>
+                <span class="step-halo"></span>
+              </div>
+              <div class="process-step-box">
+                <span class="step-label">PHASE 01</span>
+                <h4 class="step-title">Discover</h4>
+                <p class="step-desc">
+                  Explore services and food truck options with multi-cuisine radar, customer ratings, and chef portfolios.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step-node">
+              <div class="process-orb-pin">
+                <span class="step-number">02</span>
+                <span class="step-halo"></span>
+              </div>
+              <div class="process-step-box">
+                <span class="step-label">PHASE 02</span>
+                <h4 class="step-title">Choose</h4>
+                <p class="step-desc">
+                  Review menus, locations, and available offerings to match your exact taste, budget, and guest count.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step-node">
+              <div class="process-orb-pin">
+                <span class="step-number">03</span>
+                <span class="step-halo"></span>
+              </div>
+              <div class="process-step-box">
+                <span class="step-label">PHASE 03</span>
+                <h4 class="step-title">Request</h4>
+                <p class="step-desc">
+                  Select your event requirements or desired service tier with transparent date and location details.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step-node active">
+              <div class="process-orb-pin gold-pin">
+                <span class="step-number">04</span>
+                <span class="step-halo gold"></span>
+              </div>
+              <div class="process-step-box active-box">
+                <span class="step-label gold">PHASE 04</span>
+                <h4 class="step-title">Connect</h4>
+                <p class="step-desc">
+                  Submit your request and coordinate confirmation directly with the vendor for flawless on-site execution.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="services-cta-section" id="services-cta">
+      <div class="container">
+        
+        <div class="services-cta-card">
+          <div class="cta-backdrop-glow"></div>
+          
+          <div class="cta-content-wrapper">
+            <span class="cta-eyebrow"><i class="fa-solid fa-sparkles"></i> START YOUR CULINARY EXPERIENCE</span>
+            <h2 class="cta-heading">LET'S MAKE YOUR NEXT GATHERING DELICIOUS</h2>
+            <div class="section-gold-dash center"></div>
+            
+            <p class="cta-lead">
+              Whether you're organizing a 500-person festival, looking for tonight's dinner pop-up, or expanding your food truck fleet, Food Feast delivers perfection on wheels.
+            </p>
+
+            <div class="cta-buttons-group">
+              <a href="Services Details.html?service=truck-discovery" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-compass"></i> <span>Find Your Food Truck</span>
+              </a>
+              <a href="Services Details.html?service=vendor-management" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-truck-ramp-box"></i> <span>Become a Vendor</span>
+              </a>
+            </div>
+
+            <div class="cta-badges-row">
+              <span class="cta-mini-tag"><i class="fa-solid fa-shield-halved"></i> 100% Insured Vendors</span>
+              <span class="cta-mini-tag"><i class="fa-solid fa-bolt"></i> 24h Confirmation</span>
+              <span class="cta-mini-tag"><i class="fa-solid fa-star"></i> 4.9/5 Average Review</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="container footer-container">
+      
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <div class="logo-emblem">
+            <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">FOOD FEAST</span>
+            <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+          </div>
+        </a>
+        <p class="footer-bio">
+          The premier online food truck booking platform connecting hungry food enthusiasts with world-class mobile pitmasters and artisanal street kitchens.
+        </p>
+        <div class="footer-social-links">
+          <a href="javascript:void(0)" onclick="showToast('Connecting on Instagram', 'fa-instagram')" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on Facebook', 'fa-facebook-f')" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on X', 'fa-x-twitter')" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on YouTube', 'fa-youtube')" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on TikTok', 'fa-tiktok')" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home (Signature)</a></li>
+          <li><a href="Home 2.html">Food Truck Directory</a></li>
+          <li><a href="About.html">About Us & Chefs</a></li>
+          <li><a href="Services.html">All Platform Services</a></li>
+          <li><a href="Services Details.html?service=event-booking">Event Catering Booking</a></li>
+          <li><a href="Services Details.html?service=truck-discovery">Truck Discovery & Radar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Popular Cuisines</h4>
+        <ul class="footer-links">
+          <li><a href="Services.html#cuisine-discovery" onclick="switchCuisine('burgers')">Smash Burgers & Angus</a></li>
+          <li><a href="Services.html#cuisine-discovery" onclick="switchCuisine('tacos')">Oaxacan Street Tacos</a></li>
+          <li><a href="Services.html#cuisine-discovery" onclick="switchCuisine('pizza')">Wood-Fired Pizza 900°</a></li>
+          <li><a href="Services.html#cuisine-discovery" onclick="switchCuisine('asian')">Asian Wok & Bao</a></li>
+          <li><a href="Services.html#cuisine-discovery" onclick="switchCuisine('desserts')">Artisanal Waffles & Gelato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">For Vendors</h4>
+        <ul class="footer-links">
+          <li><a href="Services Details.html?service=vendor-management">Vendor Portal & Tools</a></li>
+          <li><a href="signup.html">Vendor Sign Up</a></li>
+          <li><a href="login.html">Vendor Dashboard</a></li>
+          <li><a href="Services.html#core-services">Catering Leads Program</a></li>
+          <li><a href="index.html#contact">Partner Concierge</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="footer-heading">Street Food Alerts</h4>
+        <p class="newsletter-desc">Get weekly notifications when secret gourmet food trucks pop up in your area.</p>
+        <form class="footer-newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+          <div class="newsletter-input-group">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+        <div class="app-badges">
+          <span class="app-badge-pill" onclick="showToast('Food Feast iOS App available on App Store', 'fa-apple')"><i class="fa-brands fa-apple"></i> App Store</span>
+          <span class="app-badge-pill" onclick="showToast('Food Feast Android App available on Google Play', 'fa-google-play')"><i class="fa-brands fa-google-play"></i> Google Play</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">
+          &copy; 2026 <strong>Food Feast Inc.</strong> All rights reserved. Crafted with passion for vibrant street food culture.
+        </p>
+        <div class="footer-legal-links">
+          <a href="javascript:void(0)" onclick="showToast('Privacy Policy opened', 'fa-shield')">Privacy Policy</a>
+          <span>•</span>
+          <a href="javascript:void(0)" onclick="showToast('Terms of Service opened', 'fa-file-contract')">Terms of Service</a>
+          <span>•</span>
+          <a href="javascript:void(0)" onclick="showToast('Hygiene standards certified', 'fa-hand-sparkles')">Security & Hygiene</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeInquiryModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-logo">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <h3 class="modal-title" id="inquiryTitle">Request Event Catering</h3>
+        <p class="modal-subtitle">Tell us about your gathering & get verified quotes</p>
+      </div>
+
+      <form class="modal-form" id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+        <div class="form-group">
+          <label for="inquiryOccasion" class="form-label">Event Occasion Type</label>
+          <select id="inquiryOccasion" class="form-control" required>
+            <option value="corporate">Corporate Event / Office Catering</option>
+            <option value="private">Private Party / Birthday / Celebration</option>
+            <option value="wedding">Wedding / Anniversary</option>
+            <option value="festival">Festival / Multi-Truck Public Event</option>
+          </select>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label for="inquiryGuests" class="form-label">Estimated Guests</label>
+            <input type="number" id="inquiryGuests" class="form-control" min="10" max="10000" placeholder="e.g. 150" value="100" required>
+          </div>
+          <div class="form-group">
+            <label for="inquiryDate" class="form-label">Preferred Date</label>
+            <input type="date" id="inquiryDate" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryEmail" class="form-label">Your Email</label>
+          <input type="email" id="inquiryEmail" class="form-control" placeholder="contact@company.com" required value="planner@event.com">
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryNotes" class="form-label">Cuisine Preferences or Special Requests</label>
+          <textarea id="inquiryNotes" class="form-control" rows="2" placeholder="e.g. Texas BBQ & smash burger trucks with gluten-free options..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 btn-modal-submit">
+          <span>Submit Event Request</span> <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="services.js"></script>
+</body>
+</html>

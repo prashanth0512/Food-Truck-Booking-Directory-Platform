@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="burgundy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Feast — About Us & Our Master Chefs</title>
+  <meta name="description" content="Meet the master pitmasters, street gastronomy alchemists, and culinary pioneers behind Food Feast. Learn about our 30-year heritage, mission, vision, and timeline.">
+  <meta name="keywords" content="about food feast, our chefs, master pitmasters, street food vision, food truck history, catering timeline, culinary mission">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="About.css?v=2.3">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <a href="index.html" class="brand-logo" id="brandLogo" aria-label="Food Feast Home">
+        <div class="logo-emblem">
+          <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          
+          <li class="nav-item dropdown" id="homeDropdownItem">
+            <a href="index.html" class="nav-link dropdown-toggle" id="homeDropdownToggle" aria-haspopup="true" aria-expanded="false">
+              HOME <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu" id="homeDropdownMenu">
+              <li>
+                <a href="index.html" class="dropdown-link" id="navHome1">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 1 (Signature)</span>
+                    <span class="drop-desc">Hero BBQ Truck & Daily Specials</span>
+                  </div>
+                  <span class="preview-tag">Classic</span>
+                </a>
+              </li>
+              <li>
+                <a href="Home 2.html" class="dropdown-link" id="navHome2">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 2 (Live Grid)</span>
+                    <span class="drop-desc">Interactive Radar & Cuisine Finder</span>
+                  </div>
+                  <span class="preview-tag">Explore</span>
+                </a>
+              </li>
+              <li>
+                <a href="About.html" class="dropdown-link active" id="navAbout">
+                  <div class="drop-item-content">
+                    <span class="drop-title">About Us (Our Chefs)</span>
+                    <span class="drop-desc">Mission, Heritage & Chef Roster</span>
+                  </div>
+                  <span class="current-badge">Active</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="About.html" class="nav-link active" id="navChefs">OUR CHEFS</a>
+          </li>
+          <li class="nav-item">
+            <a href="Services.html" class="nav-link" id="navServices">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a href="Contact.html" class="nav-link" id="navContact">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" id="navDashboard">
+              DASHBOARD <span class="nav-live-dot"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        
+        <button class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+        </button>
+
+        <button class="action-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle Text Direction" title="Switch Direction (LTR / RTL)">
+          <span id="rtlText">RTL</span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary login-btn" id="loginBtn" aria-label="Go to Login Page">
+          <i class="fa-solid fa-user-circle"></i>
+          <span>LOGIN</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-text">
+        <span class="brand-title">FOOD FEAST</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+      <li><a href="Home 2.html" class="mobile-nav-link">Home 2</a></li>
+      <li><a href="About.html" class="mobile-nav-link active">About (our Chefs)</a></li>
+      <li><a href="Services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="Contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn btn-primary w-100 mobile-login-btn" id="mobileLoginBtn">
+        <i class="fa-solid fa-user-circle"></i>
+        <span>Login / Register</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="about-main-wrapper" id="mainContent">
+
+    <section class="about-hero-section" id="hero">
+      <div class="about-hero-backdrop">
+        <div class="about-hero-glow-1"></div>
+        <div class="about-hero-glow-2"></div>
+      </div>
+
+      <div class="container about-hero-container">
+        
+        <div class="about-hero-content">
+          <div class="about-hero-badge">
+            <span class="pulse-beacon"></span>
+            <span>EST. 1993 • ARTISANAL CHEF COLLECTIVE</span>
+          </div>
+          
+          <h1 class="about-hero-title">
+            THE MASTERS BEHIND <span class="gold-gradient-text">THE SMOKE & FLAME</span>
+          </h1>
+
+          <p class="about-hero-subtitle">
+            Pioneering the modern street gastronomy movement for over three decades. We unite award-winning pitmasters, Michelin-trained executive chefs, and sustainably certified mobile kitchens into one premier platform.
+          </p>
+
+          <div class="about-hero-actions">
+            <a href="#chefs-grid" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-utensils"></i> Meet Our Master Chefs
+            </a>
+            <a href="#mission" class="btn btn-outline-white btn-lg">
+              <i class="fa-solid fa-compass"></i> Explore Our Mission
+            </a>
+          </div>
+
+          <div class="about-stats-ticker">
+            <div class="ticker-item">
+              <strong class="ticker-num">30+</strong>
+              <span class="ticker-label">Years Heritage</span>
+            </div>
+            <div class="ticker-divider"></div>
+            <div class="ticker-item">
+              <strong class="ticker-num">140+</strong>
+              <span class="ticker-label">Executive Chefs</span>
+            </div>
+            <div class="ticker-divider"></div>
+            <div class="ticker-item">
+              <strong class="ticker-num">520+</strong>
+              <span class="ticker-label">Certified Trucks</span>
+            </div>
+            <div class="ticker-divider"></div>
+            <div class="ticker-item">
+              <strong class="ticker-num">4.95 ★</strong>
+              <span class="ticker-label">Average Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-hero-visual">
+          <div class="about-hero-card">
+            <div class="about-hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=80" alt="Executive Chef plating flame-grilled artisan dishes at a gourmet food truck" class="about-hero-img" loading="eager">
+              <div class="about-hero-gradient-overlay"></div>
+              <div class="hero-chef-tag">
+                <i class="fa-solid fa-award"></i>
+                <span>Executive Pitmaster Council</span>
+              </div>
+            </div>
+            <div class="about-hero-card-footer">
+              <div>
+                <h3>Chef Marcus Sterling & Council</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Austin Central Fleet Headquarters</p>
+              </div>
+              <span class="hero-live-pill"><span class="pulse-beacon"></span> Live Sizzle</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact about-mission-section" id="mission">
+      <div class="container">
+        
+        <div class="about-split-grid">
+          
+          <div class="about-split-visual-col animate-from-left">
+            <div class="mission-orbit-stage">
+              <div class="mission-img-wrapper" onclick="showToast('Our mission: 100% organic farm-to-street craft', 'fa-leaf')">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80" alt="Master chef preparing artisan farm-fresh dishes" class="mission-img" loading="lazy">
+              </div>
+
+              <div class="split-floating-badge">
+                <i class="fa-solid fa-seedling badge-icon"></i>
+                <div>
+                  <strong>Farm-To-Truck Sourcing</strong>
+                  <small>Fresh Daily Harvest</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-split-content-col animate-from-right">
+            <span class="eyebrow-marker">PURPOSE & CRAFT</span>
+            <h2 class="section-title-large">OUR CULINARY MISSION</h2>
+            <div class="section-gold-dash"></div>
+            <p class="section-lead-para">
+              To shatter the boundary between fine dining exclusivity and urban street gastronomy by empowering elite culinary artists.
+            </p>
+            <p class="about-para-text">
+              We believe great gastronomy should never be trapped inside four walls. Every mobile kitchen certified under Food Feast is an independent culinary sanctuary dedicated to slow-smoked traditions, artisanal wood fires, and vibrant spices crafted fresh in front of your eyes.
+            </p>
+
+            <div class="about-pillars-stack compact-stack">
+              <div class="pillar-mini-card">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-tractor"></i>
+                </div>
+                <div>
+                  <strong>Micro-Farm Organic Sourcing</strong>
+                  <p>All beef, produce, and grains sourced directly from ethical regional farmers within 50 miles.</p>
+                </div>
+              </div>
+
+              <div class="pillar-mini-card">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-fire"></i>
+                </div>
+                <div>
+                  <strong>Cooked-To-Order Fire Craft</strong>
+                  <p>Zero pre-packaged food or heat lamps. Every order is kissed by hardwood smoke and open flame.</p>
+                </div>
+              </div>
+
+              <div class="pillar-mini-card">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+                <div>
+                  <strong>Empowering Independent Chefs</strong>
+                  <p>Providing cutting-edge digital booking, automated GPS radar, and concierge logistics to culinary entrepreneurs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact about-vision-section" id="vision">
+      <div class="container">
+        
+        <div class="about-split-grid reverse-grid">
+          
+          <div class="about-split-content-col animate-from-left">
+            <span class="eyebrow-marker">SUSTAINABLE 2030 FLEET</span>
+            <h2 class="section-title-large">OUR FUTURE VISION</h2>
+            <div class="section-gold-dash"></div>
+            <p class="section-lead-para">
+              Democratizing luxury catering and pioneering the world's most sustainable, zero-emission street food ecosystem.
+            </p>
+            <p class="about-para-text">
+              Looking toward 2030, Food Feast is engineering solar-assisted mobile commercial kitchens. We envision vibrant city plazas powered by smart fleet logistics where communities and event hosts seamlessly access Michelin-level street feasts.
+            </p>
+
+            <div class="about-pillars-stack compact-stack">
+              <div class="pillar-mini-card">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-solar-panel"></i>
+                </div>
+                <div>
+                  <strong>100% Zero-Emission Solar Fleets</strong>
+                  <p>Silent lithium solar units and 100% certified plant-based compostable service ware.</p>
+                </div>
+              </div>
+
+              <div class="pillar-mini-card">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <div>
+                  <strong>AI Smart Radar Logistics</strong>
+                  <p>Predictive demand mapping directing master food trucks to bustling neighborhood hubs with minimal transit.</p>
+                </div>
+              </div>
+
+              <div class="pillar-mini-card">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <strong>Next-Gen Culinary Incubator</strong>
+                  <p>Mentorship programs, commissary facilities, and grants for rising culinary innovators.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-split-visual-col animate-from-right">
+            <div class="mission-orbit-stage">
+              <div class="mission-img-wrapper" onclick="showToast('Our Vision: Clean solar fleets & smart radar', 'fa-solar-panel')">
+                <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1000&q=80" alt="Next-generation sustainable food truck kitchen under starry city lights" class="mission-img" loading="lazy">
+              </div>
+
+              <div class="split-floating-badge vision-seal">
+                <i class="fa-solid fa-earth-americas badge-icon"></i>
+                <div>
+                  <strong>2030 Eco-Fleet Standard</strong>
+                  <small>Zero-Carbon Street Gastronomy</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact about-heritage-section" id="heritage">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">BORN IN AUSTIN 1993</span>
+          <h2 class="section-title-large">OUR GENESIS & ESTABLISHMENT</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            How a customized 1968 Chevrolet truck and a passion for slow oak smoke ignited a nationwide culinary revolution in 1993.
+          </p>
+        </div>
+
+        <div class="about-heritage-grid">
+          
+          <div class="heritage-story-card">
+            <div class="heritage-card-header">
+              <span class="heritage-year-pill">1993</span>
+              <div class="heritage-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+            </div>
+            <h3 class="heritage-card-title">The Austin Smoker Genesis</h3>
+            <p class="heritage-card-text">
+              Founder Marcus Sterling welded a 500-gallon steel smoker onto the back of a vintage pickup in Austin, Texas. Word spread rapidly about the 16-hour hickory ribs basted in bourbon molasses.
+            </p>
+            <div class="heritage-metric">
+              <i class="fa-solid fa-circle-check"></i> First truck served 400+ daily fans
+            </div>
+          </div>
+
+          <div class="heritage-story-card featured">
+            <div class="heritage-card-header">
+              <span class="heritage-year-pill gold">THE PHILOSOPHY</span>
+              <div class="heritage-icon gold"><i class="fa-solid fa-crown"></i></div>
+            </div>
+            <h3 class="heritage-card-title">Refusing Restaurant Walls</h3>
+            <p class="heritage-card-text">
+              Rejecting traditional restaurant overhead and rigid dining rooms, we proved that elite culinary craft thrives on the vibrant open streets with direct customer connection.
+            </p>
+            <div class="heritage-metric">
+              <i class="fa-solid fa-star"></i> 100% Uncompromised Quality
+            </div>
+          </div>
+
+          <div class="heritage-story-card">
+            <div class="heritage-card-header">
+              <span class="heritage-year-pill">2026 TODAY</span>
+              <div class="heritage-icon"><i class="fa-solid fa-satellite"></i></div>
+            </div>
+            <h3 class="heritage-card-title">A National Collective</h3>
+            <p class="heritage-card-text">
+              Today, Food Feast is America's premier curated food truck platform, uniting over 520+ mobile kitchens across 28 metro regions with real-time GPS radar and turnkey catering.
+            </p>
+            <div class="heritage-metric">
+              <i class="fa-solid fa-award"></i> 1.8M+ Foodies Served Nationwide
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact about-timeline-section" id="timeline">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">HISTORIC MILESTONES</span>
+          <h2 class="section-title-large">THREE DECADES OF SUCCESS</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Explore key milestone breakthroughs in our 30-year evolutionary journey from a lone smoker to a nationwide culinary network.
+          </p>
+        </div>
+
+        <div class="timeline-interactive-wrapper">
+          <div class="timeline-rail-line">
+            <div class="timeline-beam-pulse"></div>
+          </div>
+
+          <div class="timeline-milestones-grid">
+            
+            <div class="milestone-node-card">
+              <div class="milestone-pin-orb">
+                <span class="node-year">1993</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="milestone-box">
+                <span class="milestone-badge">The Beginning</span>
+                <h4 class="milestone-title">Austin Vintage Smoker</h4>
+                <p class="milestone-desc">
+                  Chef Marcus Sterling launches Lone Star Pitmaster with a custom 14-spice rub and white oak smoke pit.
+                </p>
+              </div>
+            </div>
+
+            <div class="milestone-node-card">
+              <div class="milestone-pin-orb">
+                <span class="node-year">2005</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="milestone-box">
+                <span class="milestone-badge">Fleet Guild</span>
+                <h4 class="milestone-title">The 25-Chef Union</h4>
+                <p class="milestone-desc">
+                  Expanded from BBQ into Neapolitan wood-fired pizza, Oaxacan tacos, and Belgian sweet waffle trucks.
+                </p>
+              </div>
+            </div>
+
+            <div class="milestone-node-card">
+              <div class="milestone-pin-orb">
+                <span class="node-year">2014</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="milestone-box">
+                <span class="milestone-badge">VIP Catering</span>
+                <h4 class="milestone-title">2,000-Guest Festivals</h4>
+                <p class="milestone-desc">
+                  Successfully catered major tech conferences and celebrity weddings with 45-minute frictionless line speed.
+                </p>
+              </div>
+            </div>
+
+            <div class="milestone-node-card">
+              <div class="milestone-pin-orb">
+                <span class="node-year">2020</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="milestone-box">
+                <span class="milestone-badge">Smart Radar</span>
+                <h4 class="milestone-title">Live GPS App Platform</h4>
+                <p class="milestone-desc">
+                  Launched real-time food truck radar mapping, instant contactless pre-orders, and automated pop-up alerts.
+                </p>
+              </div>
+            </div>
+
+            <div class="milestone-node-card active">
+              <div class="milestone-pin-orb gold-active">
+                <span class="node-year">2026</span>
+                <span class="node-pulse gold"></span>
+              </div>
+              <div class="milestone-box active-box">
+                <span class="milestone-badge gold">Current Frontier</span>
+                <h4 class="milestone-title">520+ Fleet & Eco Standards</h4>
+                <p class="milestone-desc">
+                  Operating 520+ certified mobile kitchens across 28 cities with nationwide corporate concierge booking.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact about-chefs-section" id="chefs-grid">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">THE CULINARY COLLECTIVE</span>
+          <h2 class="section-title-large">MEET OUR MASTER CHEFS & PITMASTERS</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            The culinary visionaries bringing fine-dining pedigree, generational recipes, and unbridled passion to the open streets.
+          </p>
+        </div>
+
+        <div class="team-cards-grid" id="chefsGrid">
+          
+          <div class="team-member-card" data-category="bbq" id="chefCard-marcus">
+            <div class="team-card-inner">
+              
+              <div class="team-img-col">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Marcus Sterling - Master Pitmaster" class="team-portrait-img">
+              </div>
+
+              <div class="team-info-col">
+                <div class="team-header-row">
+                  <h3 class="team-name">MARCUS STERLING</h3>
+                  <div class="team-social-group">
+                    <a href="javascript:void(0)" onclick="showToast('Connecting with Chef Marcus on LinkedIn', 'fa-linkedin-in')" class="team-social-icon" aria-label="Marcus Sterling LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openChefDetailModal('marcus')" class="team-social-icon" aria-label="Marcus Sterling Website">
+                      <i class="fa-solid fa-globe"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="team-role-line">
+                  Executive Pitmaster • Hardwood Smoke Craft
+                </div>
+
+                <p class="team-bio-text">
+                  Specializes in introducing 16-hour low-and-slow white oak smoke equilibrium, wood moisture density selection, and secret bourbon dry-rub caramelization.
+                </p>
+
+                <div class="team-divider-line"></div>
+
+                <div class="team-bottom-row">
+                  <div class="team-tags-group">
+                    <span class="team-tag-pill">16-Hour Hickory</span>
+                    <span class="team-tag-pill">Wagyu Brisket</span>
+                  </div>
+                  <button type="button" class="team-pedagogy-btn" onclick="toggleChefPedagogy('marcus', event)" aria-expanded="false" aria-controls="pedagogy-marcus">
+                    <span>PEDAGOGY</span> <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="team-pedagogy-drawer" id="pedagogy-marcus">
+              <div class="drawer-inner-content">
+                <div class="drawer-title-row">
+                  <div class="drawer-badge"><i class="fa-solid fa-graduation-cap"></i> CULINARY PEDAGOGY & MENTORSHIP</div>
+                  <button type="button" class="drawer-close-link" onclick="toggleChefPedagogy('marcus', event)">Close &times;</button>
+                </div>
+                <h4 class="drawer-heading">Thermal Equilibrium & Oak Combustion Science</h4>
+                <p class="drawer-summary">
+                  Marcus's curriculum focuses on convective heat currents inside offset smokers, moisture preservation at 203°F internal temperature, and clean blue-smoke oxygen regulation.
+                </p>
+                <div class="drawer-modules-grid">
+                  <div class="module-mini-item">
+                    <span class="mod-num">01</span>
+                    <strong>Wood Chemistry:</strong> Post oak vs. hickory smoke rings
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">02</span>
+                    <strong>Collagen Breakdown:</strong> 16-hour Wagyu gelatinization
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">03</span>
+                    <strong>Line Plating Speed:</strong> 45-second high-velocity truck service
+                  </div>
+                </div>
+                <div class="drawer-actions">
+                  <button class="btn btn-primary btn-sm" onclick="openPedagogyModal('marcus')">
+                    <i class="fa-solid fa-book-open"></i> Full Masterclass Syllabus
+                  </button>
+                  <button class="btn btn-outline-white btn-sm" onclick="bookChefCatering('marcus')">
+                    <i class="fa-solid fa-calendar-check"></i> Book Masterclass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member-card" data-category="tacos" id="chefCard-isabella">
+            <div class="team-card-inner">
+              
+              <div class="team-img-col">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80" alt="Isabella Ramos - Executive Birria Alchemist" class="team-portrait-img">
+              </div>
+
+              <div class="team-info-col">
+                <div class="team-header-row">
+                  <h3 class="team-name">ISABELLA RAMOS</h3>
+                  <div class="team-social-group">
+                    <a href="javascript:void(0)" onclick="showToast('Connecting with Chef Isabella on LinkedIn', 'fa-linkedin-in')" class="team-social-icon" aria-label="Isabella Ramos LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openChefDetailModal('isabella')" class="team-social-icon" aria-label="Isabella Ramos Website">
+                      <i class="fa-solid fa-globe"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="team-role-line">
+                  Executive Birria Alchemist • Heritage Oaxacan Craft
+                </div>
+
+                <p class="team-bio-text">
+                  Focuses on ancestral volcanic stone nixtamalization, hand-pressed heirloom corn tortillas, slow-braised beef consommé reduction, and balancing dried chili terroirs.
+                </p>
+
+                <div class="team-divider-line"></div>
+
+                <div class="team-bottom-row">
+                  <div class="team-tags-group">
+                    <span class="team-tag-pill">Stone-Ground Masa</span>
+                    <span class="team-tag-pill">Braised Consommé</span>
+                  </div>
+                  <button type="button" class="team-pedagogy-btn" onclick="toggleChefPedagogy('isabella', event)" aria-expanded="false" aria-controls="pedagogy-isabella">
+                    <span>PEDAGOGY</span> <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="team-pedagogy-drawer" id="pedagogy-isabella">
+              <div class="drawer-inner-content">
+                <div class="drawer-title-row">
+                  <div class="drawer-badge"><i class="fa-solid fa-graduation-cap"></i> CULINARY PEDAGOGY & MENTORSHIP</div>
+                  <button type="button" class="drawer-close-link" onclick="toggleChefPedagogy('isabella', event)">Close &times;</button>
+                </div>
+                <h4 class="drawer-heading">Ancestral Nixtamalization & Dried Chili Terroir</h4>
+                <p class="drawer-summary">
+                  Isabella instructs rising chefs on selecting heirloom corn varieties, alkaline water ratios for masa elasticity, and extracting deep umami from toasted Guajillo & Pasilla chilis.
+                </p>
+                <div class="drawer-modules-grid">
+                  <div class="module-mini-item">
+                    <span class="mod-num">01</span>
+                    <strong>Volcanic Metate Milling:</strong> Stone-ground masa moisture ratios
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">02</span>
+                    <strong>8-Hour Consommé:</strong> Marrow fat extraction & acid balance
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">03</span>
+                    <strong>Tallow Crisp Dynamics:</strong> Double-dip griddle technique
+                  </div>
+                </div>
+                <div class="drawer-actions">
+                  <button class="btn btn-primary btn-sm" onclick="openPedagogyModal('isabella')">
+                    <i class="fa-solid fa-book-open"></i> Full Masterclass Syllabus
+                  </button>
+                  <button class="btn btn-outline-white btn-sm" onclick="bookChefCatering('isabella')">
+                    <i class="fa-solid fa-calendar-check"></i> Book Masterclass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member-card" data-category="burgers" id="chefCard-antoine">
+            <div class="team-card-inner">
+              
+              <div class="team-img-col">
+                <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=600&q=80" alt="Antoine Moreau - Gourmet Smash Virtuoso" class="team-portrait-img">
+              </div>
+
+              <div class="team-info-col">
+                <div class="team-header-row">
+                  <h3 class="team-name">ANTOINE MOREAU</h3>
+                  <div class="team-social-group">
+                    <a href="javascript:void(0)" onclick="showToast('Connecting with Chef Antoine on LinkedIn', 'fa-linkedin-in')" class="team-social-icon" aria-label="Antoine Moreau LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openChefDetailModal('antoine')" class="team-social-icon" aria-label="Antoine Moreau Website">
+                      <i class="fa-solid fa-globe"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="team-role-line">
+                  Dry-Aged Angus Virtuoso • Gourmet Smash Craft
+                </div>
+
+                <p class="team-bio-text">
+                  Specializes in high-heat cast iron plancha Maillard reactions, custom 80/20 Chuck-Brisket fat blending physics, and house-made black truffle aioli emulsification.
+                </p>
+
+                <div class="team-divider-line"></div>
+
+                <div class="team-bottom-row">
+                  <div class="team-tags-group">
+                    <span class="team-tag-pill">Dry-Aged Angus</span>
+                    <span class="team-tag-pill">Truffle Aioli</span>
+                  </div>
+                  <button type="button" class="team-pedagogy-btn" onclick="toggleChefPedagogy('antoine', event)" aria-expanded="false" aria-controls="pedagogy-antoine">
+                    <span>PEDAGOGY</span> <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="team-pedagogy-drawer" id="pedagogy-antoine">
+              <div class="drawer-inner-content">
+                <div class="drawer-title-row">
+                  <div class="drawer-badge"><i class="fa-solid fa-graduation-cap"></i> CULINARY PEDAGOGY & MENTORSHIP</div>
+                  <button type="button" class="drawer-close-link" onclick="toggleChefPedagogy('antoine', event)">Close &times;</button>
+                </div>
+                <h4 class="drawer-heading">Maillard Contact Mechanics & Fat-to-Lean Ratios</h4>
+                <p class="drawer-summary">
+                  Antoine demonstrates how to achieve paper-thin crispy burger lace edges while locking 100% of beef juices inside the patty center through direct stainless-steel pressure.
+                </p>
+                <div class="drawer-modules-grid">
+                  <div class="module-mini-item">
+                    <span class="mod-num">01</span>
+                    <strong>Meat Blending Science:</strong> Dry-aged brisket & short rib ratios
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">02</span>
+                    <strong>Plancha Heat Transfer:</strong> 550°F cast iron contact physics
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">03</span>
+                    <strong>Emulsion Chemistry:</strong> Stable truffle aioli without breaking
+                  </div>
+                </div>
+                <div class="drawer-actions">
+                  <button class="btn btn-primary btn-sm" onclick="openPedagogyModal('antoine')">
+                    <i class="fa-solid fa-book-open"></i> Full Masterclass Syllabus
+                  </button>
+                  <button class="btn btn-outline-white btn-sm" onclick="bookChefCatering('antoine')">
+                    <i class="fa-solid fa-calendar-check"></i> Book Masterclass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member-card" data-category="pizza" id="chefCard-giovanni">
+            <div class="team-card-inner">
+              
+              <div class="team-img-col">
+                <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?auto=format&fit=crop&w=600&q=80" alt="Giovanni Rossi - Master Neapolitan Pizzaiolo" class="team-portrait-img">
+              </div>
+
+              <div class="team-info-col">
+                <div class="team-header-row">
+                  <h3 class="team-name">GIOVANNI ROSSI</h3>
+                  <div class="team-social-group">
+                    <a href="javascript:void(0)" onclick="showToast('Connecting with Chef Giovanni on LinkedIn', 'fa-linkedin-in')" class="team-social-icon" aria-label="Giovanni Rossi LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openChefDetailModal('giovanni')" class="team-social-icon" aria-label="Giovanni Rossi Website">
+                      <i class="fa-solid fa-globe"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="team-role-line">
+                  Master Pizzaiolo • 900° Stone Oven Fermentation
+                </div>
+
+                <p class="team-bio-text">
+                  Instructs on 48-hour wild sourdough cold fermentation, gluten matrix elasticity, and achieving signature 90-second volcanic leopard blistering inside mobile ovens.
+                </p>
+
+                <div class="team-divider-line"></div>
+
+                <div class="team-bottom-row">
+                  <div class="team-tags-group">
+                    <span class="team-tag-pill">48-Hr Fermentation</span>
+                    <span class="team-tag-pill">900° Stone Baking</span>
+                  </div>
+                  <button type="button" class="team-pedagogy-btn" onclick="toggleChefPedagogy('giovanni', event)" aria-expanded="false" aria-controls="pedagogy-giovanni">
+                    <span>PEDAGOGY</span> <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="team-pedagogy-drawer" id="pedagogy-giovanni">
+              <div class="drawer-inner-content">
+                <div class="drawer-title-row">
+                  <div class="drawer-badge"><i class="fa-solid fa-graduation-cap"></i> CULINARY PEDAGOGY & MENTORSHIP</div>
+                  <button type="button" class="drawer-close-link" onclick="toggleChefPedagogy('giovanni', event)">Close &times;</button>
+                </div>
+                <h4 class="drawer-heading">Hydration Dynamics & Radiative Heat Baking</h4>
+                <p class="drawer-summary">
+                  Giovanni's masterclass focuses on 70% hydration dough kneading, wild levain pH testing, and manipulating the dome flame temperature for rapid blistering without drying the crumb.
+                </p>
+                <div class="drawer-modules-grid">
+                  <div class="module-mini-item">
+                    <span class="mod-num">01</span>
+                    <strong>Sourdough Levain:</strong> Micro-yeast culture balance
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">02</span>
+                    <strong>Peel Technique:</strong> Rapid launch & turning at 900°F
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">03</span>
+                    <strong>San Marzano Sauce:</strong> Uncooked crushed tomato acidity tuning
+                  </div>
+                </div>
+                <div class="drawer-actions">
+                  <button class="btn btn-primary btn-sm" onclick="openPedagogyModal('giovanni')">
+                    <i class="fa-solid fa-book-open"></i> Full Masterclass Syllabus
+                  </button>
+                  <button class="btn btn-outline-white btn-sm" onclick="bookChefCatering('giovanni')">
+                    <i class="fa-solid fa-calendar-check"></i> Book Masterclass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member-card" data-category="asian" id="chefCard-kenji">
+            <div class="team-card-inner">
+              
+              <div class="team-img-col">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kenji Takahashi - Master Wok & Dim Sum Specialist" class="team-portrait-img">
+              </div>
+
+              <div class="team-info-col">
+                <div class="team-header-row">
+                  <h3 class="team-name">KENJI TAKAHASHI</h3>
+                  <div class="team-social-group">
+                    <a href="javascript:void(0)" onclick="showToast('Connecting with Chef Kenji on LinkedIn', 'fa-linkedin-in')" class="team-social-icon" aria-label="Kenji Takahashi LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openChefDetailModal('kenji')" class="team-social-icon" aria-label="Kenji Takahashi Website">
+                      <i class="fa-solid fa-globe"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="team-role-line">
+                  Master Wok Specialist • High-Heat Wok Hei & Bao
+                </div>
+
+                <p class="team-bio-text">
+                  Teaches the ancient breath of the wok (Wok Hei), 5-spice pork belly braise reduction, and multi-layered fluffy steamed lotus leaf dough proofing.
+                </p>
+
+                <div class="team-divider-line"></div>
+
+                <div class="team-bottom-row">
+                  <div class="team-tags-group">
+                    <span class="team-tag-pill">High-Heat Wok Hei</span>
+                    <span class="team-tag-pill">Steamed Gua Bao</span>
+                  </div>
+                  <button type="button" class="team-pedagogy-btn" onclick="toggleChefPedagogy('kenji', event)" aria-expanded="false" aria-controls="pedagogy-kenji">
+                    <span>PEDAGOGY</span> <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="team-pedagogy-drawer" id="pedagogy-kenji">
+              <div class="drawer-inner-content">
+                <div class="drawer-title-row">
+                  <div class="drawer-badge"><i class="fa-solid fa-graduation-cap"></i> CULINARY PEDAGOGY & MENTORSHIP</div>
+                  <button type="button" class="drawer-close-link" onclick="toggleChefPedagogy('kenji', event)">Close &times;</button>
+                </div>
+                <h4 class="drawer-heading">Aerosolized Oil Ignition & Aerated Steam Proofing</h4>
+                <p class="drawer-summary">
+                  Kenji mentors apprentices on high-BTU cast iron seasoning, toss angles that ignite vaporized cooking oil droplets for smoky wok hei aroma, and steam-proofing pillowy buns.
+                </p>
+                <div class="drawer-modules-grid">
+                  <div class="module-mini-item">
+                    <span class="mod-num">01</span>
+                    <strong>Wok Toss Ergonomics:</strong> Wrist flick arc mechanics
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">02</span>
+                    <strong>Aromatics Activation:</strong> Ginger, scallion & garlic flash searing
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">03</span>
+                    <strong>Bamboo Steaming:</strong> Vapor condensation prevention on bao
+                  </div>
+                </div>
+                <div class="drawer-actions">
+                  <button class="btn btn-primary btn-sm" onclick="openPedagogyModal('kenji')">
+                    <i class="fa-solid fa-book-open"></i> Full Masterclass Syllabus
+                  </button>
+                  <button class="btn btn-outline-white btn-sm" onclick="bookChefCatering('kenji')">
+                    <i class="fa-solid fa-calendar-check"></i> Book Masterclass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member-card" data-category="dessert" id="chefCard-elena">
+            <div class="team-card-inner">
+              
+              <div class="team-img-col">
+                <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=600&q=80" alt="Elena Vance - Master Patissier & Gelato Maker" class="team-portrait-img">
+              </div>
+
+              <div class="team-info-col">
+                <div class="team-header-row">
+                  <h3 class="team-name">ELENA VANCE</h3>
+                  <div class="team-social-group">
+                    <a href="javascript:void(0)" onclick="showToast('Connecting with Chef Elena on LinkedIn', 'fa-linkedin-in')" class="team-social-icon" aria-label="Elena Vance LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openChefDetailModal('elena')" class="team-social-icon" aria-label="Elena Vance Website">
+                      <i class="fa-solid fa-globe"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="team-role-line">
+                  Master Patissier • Pearl Sugar Waffles & Gelato
+                </div>
+
+                <p class="team-bio-text">
+                  Specializes in authentic Belgian caramelized pearl sugar proofing, brioche yeast matrix structure, and zero-overrun Madagascar vanilla gelato spinning.
+                </p>
+
+                <div class="team-divider-line"></div>
+
+                <div class="team-bottom-row">
+                  <div class="team-tags-group">
+                    <span class="team-tag-pill">Pearl Sugar Dough</span>
+                    <span class="team-tag-pill">Madagascar Gelato</span>
+                  </div>
+                  <button type="button" class="team-pedagogy-btn" onclick="toggleChefPedagogy('elena', event)" aria-expanded="false" aria-controls="pedagogy-elena">
+                    <span>PEDAGOGY</span> <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="team-pedagogy-drawer" id="pedagogy-elena">
+              <div class="drawer-inner-content">
+                <div class="drawer-title-row">
+                  <div class="drawer-badge"><i class="fa-solid fa-graduation-cap"></i> CULINARY PEDAGOGY & MENTORSHIP</div>
+                  <button type="button" class="drawer-close-link" onclick="toggleChefPedagogy('elena', event)">Close &times;</button>
+                </div>
+                <h4 class="drawer-heading">Sugar Crystallization & Dairy Emulsion Dynamics</h4>
+                <p class="drawer-summary">
+                  Elena trains pastry chefs on yeast-leavened brioche dough rest times, Belgian cast iron waffle iron thermal zones, and churning dense Italian gelato with micro-ice crystal texture.
+                </p>
+                <div class="drawer-modules-grid">
+                  <div class="module-mini-item">
+                    <span class="mod-num">01</span>
+                    <strong>Liège Dough Proofing:</strong> Overnight cold butter incorporation
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">02</span>
+                    <strong>Pearl Sugar Melt:</strong> 375°F iron caramel coating
+                  </div>
+                  <div class="module-mini-item">
+                    <span class="mod-num">03</span>
+                    <strong>Gelato Micro-Structure:</strong> Air overrun suppression & fat balance
+                  </div>
+                </div>
+                <div class="drawer-actions">
+                  <button class="btn btn-primary btn-sm" onclick="openPedagogyModal('elena')">
+                    <i class="fa-solid fa-book-open"></i> Full Masterclass Syllabus
+                  </button>
+                  <button class="btn btn-outline-white btn-sm" onclick="bookChefCatering('elena')">
+                    <i class="fa-solid fa-calendar-check"></i> Book Masterclass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact about-standards-section" id="standards">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">SAFETY & HYGIENE PROTOCOLS</span>
+          <h2 class="section-title-large">THE FOOD FEAST MASTER FLEET STANDARDS</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Every food truck operating within our network undergoes a rigorous 42-point culinary, safety, and hygiene certification.
+          </p>
+        </div>
+
+        <div class="standards-features-grid">
+          
+          <div class="standard-card">
+            <div class="standard-icon-box">
+              <i class="fa-solid fa-temperature-arrow-up"></i>
+            </div>
+            <h3 class="standard-title">Commercial Grade Fire Power</h3>
+            <p class="standard-desc">
+              Custom-engineered stainless steel kitchens featuring commercial dual smokers, flat-top planchas, and 900-degree stone pizza ovens.
+            </p>
+            <div class="standard-tag"><i class="fa-solid fa-check"></i> High-Output 200 Orders/Hr</div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-icon-box">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="standard-title">Hospital-Grade Sanitation</h3>
+            <p class="standard-desc">
+              Daily microbial swabs, dual handwash stations, HEPA air filtration, and continuous digital refrigeration temperature logging.
+            </p>
+            <div class="standard-tag"><i class="fa-solid fa-check"></i> 100% Five-Star Health Rating</div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-icon-box">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </div>
+            <h3 class="standard-title">Whisper-Quiet Solar Inverters</h3>
+            <p class="standard-desc">
+              Advanced lithium solar power units that eliminate loud exhaust generator rumble, preserving a peaceful upscale atmosphere for galas.
+            </p>
+            <div class="standard-tag"><i class="fa-solid fa-check"></i> Sub-45dB Silent Operation</div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-icon-box">
+              <i class="fa-solid fa-stopwatch-20"></i>
+            </div>
+            <h3 class="standard-title">Rapid Service Velocity</h3>
+            <p class="standard-desc">
+              Proprietary kitchen layout ergonomics ensuring gourmet entrees are plated and handed to guests in under 90 seconds.
+            </p>
+            <div class="standard-tag"><i class="fa-solid fa-check"></i> Zero Queue Bottlenecks</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="about-cta-section" id="contact">
+      <div id="dashboard"></div>
+      <div class="container">
+        
+        <div class="about-cta-box">
+          <div class="cta-box-glow"></div>
+          
+          <span class="cta-tag-badge">
+            <span class="pulse-beacon"></span>
+            <span>24/7 DEDICATED MASTER CHEF CONCIERGE</span>
+          </span>
+
+          <h2 class="about-cta-title">READY TO TASTE CHEF-CRAFTED STREET LUXURY?</h2>
+          <p class="about-cta-desc">
+            Book certified master pitmasters and culinary trucks for corporate galas, private weddings, and festivals, or apply to join our elite chef network.
+          </p>
+
+          <div class="about-cta-btn-row">
+            <a href="index.html#booking" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-paper-plane"></i> Book Master Chef Catering
+            </a>
+            <a href="signup.html" class="btn btn-outline-white btn-lg">
+              <i class="fa-solid fa-truck-moving"></i> Join Chef Collective
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="container footer-container">
+      
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo" aria-label="Food Feast Home">
+          <div class="logo-emblem">
+            <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">FOOD FEAST</span>
+            <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+          </div>
+        </a>
+        <p class="footer-bio">
+          The premier online food truck booking platform connecting hungry food enthusiasts with world-class mobile pitmasters and artisanal street kitchens.
+        </p>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home (Signature)</a></li>
+          <li><a href="index.html#directory">Food Truck Directory</a></li>
+          <li><a href="index.html#specials">Daily Specials</a></li>
+          <li><a href="index.html#services">Platform Services</a></li>
+          <li><a href="About.html">Meet Our Chefs</a></li>
+          <li><a href="index.html#booking">Catering Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Popular Cuisines</h4>
+        <ul class="footer-links">
+          <li><a href="About.html#chefs-grid" onclick="filterChefs('bbq')">Smoked Texas BBQ</a></li>
+          <li><a href="About.html#chefs-grid" onclick="filterChefs('burgers')">Gourmet Smash Burgers</a></li>
+          <li><a href="About.html#chefs-grid" onclick="filterChefs('tacos')">Oaxacan Street Tacos</a></li>
+          <li><a href="About.html#chefs-grid" onclick="filterChefs('pizza')">Wood-Fired Pizza</a></li>
+          <li><a href="About.html#chefs-grid" onclick="filterChefs('asian')">Asian Bao & Noodles</a></li>
+          <li><a href="About.html#chefs-grid" onclick="filterChefs('dessert')">Artisanal Waffles & Churros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">For Vendors</h4>
+        <ul class="footer-links">
+          <li><a href="signup.html">Vendor Sign Up</a></li>
+          <li><a href="login.html">Vendor Dashboard</a></li>
+          <li><a href="index.html#services">Health & Safety Guidelines</a></li>
+          <li><a href="index.html#booking">Corporate Event Lead Program</a></li>
+          <li><a href="index.html#contact">Partner Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="footer-heading">Street Food Alerts</h4>
+        <p class="newsletter-desc">Get weekly notifications when secret gourmet food trucks pop up in your area.</p>
+        <form class="footer-newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+          <div class="newsletter-input-group">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+        <div class="app-badges">
+          <span class="app-badge-pill"><i class="fa-brands fa-apple"></i> App Store</span>
+          <span class="app-badge-pill"><i class="fa-brands fa-google-play"></i> Google Play</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">
+          &copy; 2026 <strong>Food Feast Inc.</strong> All rights reserved. Crafted with passion for vibrant street food culture.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+          <span>•</span>
+          <a href="#">Security & Hygiene</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="chefDetailModal" role="dialog" aria-modal="true" aria-labelledby="chefModalName">
+    <div class="modal-card quick-view-card">
+      <button class="modal-close-btn" onclick="closeChefDetailModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="quick-view-grid">
+        <div class="quick-view-img-box">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" id="chefModalDishImg" alt="Signature dish preview">
+          <div class="quick-view-badge" id="chefModalBadge">Executive Chef</div>
+        </div>
+
+        <div class="quick-view-content">
+          <span class="quick-view-category" id="chefModalCategory">TEXAS OAK BBQ</span>
+          <h3 class="quick-view-title" id="chefModalName">Chef Marcus Sterling</h3>
+          <div class="quick-view-price-row">
+            <span class="quick-view-price" id="chefModalTruck">The Lone Star Pitmaster</span>
+            <span class="quick-view-stars"><i class="fa-solid fa-star"></i> 4.95 (1,240 reviews)</span>
+          </div>
+
+          <p class="quick-view-desc" id="chefModalBio">
+            Generational Texas pitmaster dedicated to 16-hour hickory wood smoking. Marcus sources heritage Berkshire pork and Angus beef, dry-rubbed with his family's secret 14-spice blend.
+          </p>
+
+          <div class="quick-view-truck-source">
+            <i class="fa-solid fa-medal"></i>
+            <div>
+              <small>Specialty Platter:</small>
+              <strong id="chefModalDishTitle">Grand Smoked Wagyu Ribs</strong>
+            </div>
+          </div>
+
+          <div class="quick-view-actions">
+            <button class="btn btn-primary flex-grow" onclick="bookChefCatering()">
+              <i class="fa-solid fa-calendar-check"></i> Book Chef For Event
+            </button>
+            <button class="btn btn-outline-white" onclick="closeChefDetailModal()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="pedagogyModal" role="dialog" aria-modal="true" aria-labelledby="pedagogyModalName">
+    <div class="modal-card pedagogy-view-card">
+      <button class="modal-close-btn" onclick="closePedagogyModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="pedagogy-modal-grid">
+        <div class="pedagogy-modal-sidebar">
+          <div class="pedagogy-modal-img-wrap">
+            <img src="" id="pedagogyModalImg" alt="Chef Portrait">
+            <div class="pedagogy-modal-tag" id="pedagogyModalTag">Masterclass Mentor</div>
+          </div>
+          <h3 class="pedagogy-modal-name" id="pedagogyModalName"></h3>
+          <p class="pedagogy-modal-sub" id="pedagogyModalSub"></p>
+          <div class="pedagogy-modal-meta">
+            <div class="meta-item"><i class="fa-solid fa-clock"></i> <strong>4-Week Program</strong></div>
+            <div class="meta-item"><i class="fa-solid fa-certificate"></i> <strong>Certified Diploma</strong></div>
+            <div class="meta-item"><i class="fa-solid fa-users"></i> <strong>Max 8 Apprentices</strong></div>
+          </div>
+        </div>
+
+        <div class="pedagogy-modal-body">
+          <span class="pedagogy-category-badge" id="pedagogyModalCategory"></span>
+          <h2 class="pedagogy-title" id="pedagogyModalTitle"></h2>
+          <p class="pedagogy-lead-desc" id="pedagogyModalDesc"></p>
+
+          <h4 class="pedagogy-modules-heading"><i class="fa-solid fa-list-check"></i> Masterclass Curriculum & Hands-On Modules</h4>
+          <div class="pedagogy-modules-list" id="pedagogyModalModules">
+            
+          </div>
+
+          <div class="pedagogy-modal-actions">
+            <button class="btn btn-primary" onclick="enrollInMasterclass()">
+              <i class="fa-solid fa-paper-plane"></i> Enroll In Masterclass
+            </button>
+            <button class="btn btn-outline-white" onclick="closePedagogyModal()">
+              Close Syllabus
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="About.js"></script>
+</body>
+</html>

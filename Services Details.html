@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="burgundy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageMetaTitle">Service Details — Food Feast Platform</title>
+  <meta name="description" id="pageMetaDesc" content="Explore detailed food truck platform services from Food Feast: premier event catering booking, real-time street food discovery, and vendor growth management.">
+  <meta name="keywords" content="food truck services, food truck catering booking, corporate event catering, wedding food trucks, street food discovery, food truck vendor management">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="Services Details.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <a href="index.html" class="brand-logo" id="brandLogo" aria-label="Food Feast Home">
+        <div class="logo-emblem">
+          <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          
+          <li class="nav-item dropdown" id="homeDropdownItem">
+            <a href="index.html" class="nav-link dropdown-toggle" id="homeDropdownToggle" aria-haspopup="true" aria-expanded="false">
+              HOME <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu" id="homeDropdownMenu">
+              <li>
+                <a href="index.html" class="dropdown-link" id="navHome1">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 1 (Signature)</span>
+                    <span class="drop-desc">Hero BBQ Truck & Daily Specials</span>
+                  </div>
+                  <span class="preview-tag">Classic</span>
+                </a>
+              </li>
+              <li>
+                <a href="Home 2.html" class="dropdown-link" id="navHome2">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 2 (Live Grid)</span>
+                    <span class="drop-desc">Interactive Radar & Cuisine Finder</span>
+                  </div>
+                  <span class="preview-tag">Explore</span>
+                </a>
+              </li>
+              <li>
+                <a href="About.html" class="dropdown-link" id="navAbout">
+                  <div class="drop-item-content">
+                    <span class="drop-title">About Us (Our Chefs)</span>
+                    <span class="drop-desc">Mission, Heritage & Chef Roster</span>
+                  </div>
+                  <span class="preview-tag">Explore</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="About.html" class="nav-link" id="navChefs">OUR CHEFS</a>
+          </li>
+          <li class="nav-item">
+            <a href="Services.html" class="nav-link active" id="navServices">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a href="Contact.html" class="nav-link" id="navContact">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" id="navDashboard">
+              DASHBOARD <span class="nav-live-dot"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        
+        <button class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+        </button>
+
+        <button class="action-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle Text Direction" title="Switch Direction (LTR / RTL)">
+          <span id="rtlText">RTL</span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary login-btn" id="loginBtn" aria-label="Go to Login Page">
+          <i class="fa-solid fa-user-circle"></i>
+          <span>LOGIN</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-drawer-overlay" id="mobileDrawer">
+    <div class="mobile-drawer-card">
+      <div class="drawer-header">
+        <div class="brand-text">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+        </div>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+      </div>
+      
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+        <li><a href="Home 2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="About.html" class="mobile-nav-link">About (our Chefs)</a></li>
+        <li><a href="Services.html" class="mobile-nav-link active">Services</a></li>
+        <li><a href="Contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="drawer-footer">
+        <a href="login.html" class="btn btn-primary w-100 mobile-login-btn" id="mobileLoginBtn">
+          <i class="fa-solid fa-user-circle"></i> <span>Login / Register</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="service-details-main" id="serviceDetailsMain">
+
+    <svg class="svg-defs-hidden" aria-hidden="true" width="0" height="0" style="position:absolute; width:0; height:0; overflow:hidden;">
+      <defs>
+        <clipPath id="detailCurvedDiagonalClip" clipPathUnits="objectBoundingBox">
+          <path d="M 0.20,0 C 0.14,0.32 0.07,0.68 0.0,1 L 1,1 L 1,0 Z" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <section class="detail-hero-section" id="detailHero">
+      
+      <div class="container detail-hero-container">
+        
+        <div class="detail-hero-content animate-from-left">
+          
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+              <li class="breadcrumb-item"><a href="Services.html">Services</a></li>
+              <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+              <li class="breadcrumb-item active" id="heroBreadcrumbCurrent" aria-current="page">Event Food Truck Booking</li>
+            </ol>
+          </nav>
+
+          <div class="hero-eyebrow-pill" id="heroEyebrowWrap">
+            <span class="eyebrow-dot"></span>
+            <span class="eyebrow-text" id="heroEyebrow">TURNKEY CATERING & MOBILE KITCHENS</span>
+          </div>
+
+          <h1 class="detail-hero-title" id="heroTitle">
+            Bring Exceptional Food to Every Occasion
+          </h1>
+
+          <div class="section-gold-dash"></div>
+
+          <p class="detail-hero-lead" id="heroDesc">
+            From intimate backyard celebrations and luxury weddings to 5,000+ guest corporate conventions, Food Feast connects you with curated, health-inspected mobile kitchens tailored to your exact timeline, dietary needs, and venue setup.
+          </p>
+
+          <div class="hero-metrics-strip" id="heroMetricsStrip">
+            
+          </div>
+
+          <div class="detail-hero-actions" id="heroActions">
+            <button class="btn btn-primary btn-lg" id="heroPrimaryCta" onclick="handlePrimaryAction()">
+              <span id="heroPrimaryCtaText">Request Event Catering</span> <i class="fa-solid fa-arrow-right" id="heroPrimaryCtaIcon"></i>
+            </button>
+            <a href="#detailOverview" class="btn btn-outline-white btn-lg" id="heroSecondaryCta">
+              <span id="heroSecondaryCtaText">Explore Overview</span> <i class="fa-solid fa-chevron-down"></i>
+            </a>
+          </div>
+
+          <div class="detail-quick-switch">
+            <span class="switch-label">Switch Service View:</span>
+            <div class="switch-pills">
+              <a href="Services Details.html?service=event-booking" class="quick-pill" id="quickPillEvent">
+                <i class="fa-solid fa-calendar-check"></i> Event Booking
+              </a>
+              <a href="Services Details.html?service=truck-discovery" class="quick-pill" id="quickPillDiscovery">
+                <i class="fa-solid fa-compass"></i> Truck Discovery
+              </a>
+              <a href="Services Details.html?service=vendor-management" class="quick-pill" id="quickPillVendor">
+                <i class="fa-solid fa-chart-line"></i> Vendor Management
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="detail-hero-image-pane animate-from-right">
+        
+        <div class="detail-clipped-image-layer">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80" alt="Food feast service showcase" class="detail-hero-fullbleed-img" id="heroImg">
+          
+          <div class="detail-image-overlay-vignette"></div>
+        </div>
+
+        <div class="detail-diagonal-divider-line" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="hero-divider-svg">
+            <path d="M 20,0 C 14,32 7,68 0,100" fill="none" stroke="var(--accent-yellow)" stroke-width="2.5" vector-effect="non-scaling-stroke" />
+          </svg>
+          <div class="hero-divider-glow"></div>
+        </div>
+
+        <div class="hero-floating-glass-badge" id="heroFloatingBadge">
+          <div class="badge-icon-bubble" id="heroBadgeIcon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="badge-text-group">
+            <strong class="badge-headline" id="heroBadgeTitle">99.8% Serving Reliability</strong>
+            <span class="badge-subtext" id="heroBadgeSubtitle">100% Inspected & Certified Vendors</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-compact detail-overview-section" id="detailOverview">
+      <div class="container">
+        
+        <div class="overview-grid">
+          
+          <div class="overview-content-col">
+            <div class="overview-header-tag">
+              <span class="eyebrow-marker">SERVICE CAPABILITIES</span>
+              <span class="tag-label">COMPREHENSIVE OVERVIEW</span>
+            </div>
+
+            <h2 class="overview-title" id="overviewTitle">
+              Flawless Mobile Catering Without the Logistical Stress
+            </h2>
+
+            <div class="section-gold-dash"></div>
+
+            <div class="overview-paragraphs" id="overviewParagraphs">
+              
+            </div>
+
+            <div class="overview-checklist" id="overviewChecklist">
+              
+            </div>
+
+            <div class="overview-cta-wrap">
+              <button class="btn btn-primary" id="overviewCtaBtn" onclick="handlePrimaryAction()">
+                <span id="overviewCtaText">Plan Your Event Now</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <a href="Services.html" class="btn btn-outline-white">
+                <i class="fa-solid fa-arrow-left"></i> <span>All Services</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="overview-visual-col">
+            <div class="overview-img-card">
+              <div class="overview-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=1000&q=80" alt="Service overview visual" class="overview-display-img" id="overviewImg">
+                
+                <div class="overview-img-overlay-badge" id="overviewImgBadge">
+                  <i class="fa-solid fa-star"></i>
+                  <span id="overviewImgBadgeText">Top Rated Hospitality</span>
+                </div>
+              </div>
+              
+              <div class="overview-caption-bar">
+                <div class="caption-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="caption-text" id="overviewCaption">
+                  Turnkey mobile culinary logistics for private, corporate, and festival gatherings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact detail-benefits-section" id="detailBenefits">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">KEY ADVANTAGES & PERKS</span>
+          <h2 class="section-title-large" id="benefitsHeading">
+            WHY EVENT HOSTS CHOOSE FOOD FEAST
+          </h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle" id="benefitsSubtitle">
+            Engineered from the ground up for zero-stress execution, premium food quality, and seamless coordination.
+          </p>
+        </div>
+
+        <div class="benefits-cards-grid" id="benefitsGrid">
+          
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact detail-related-section" id="detailRelated">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">COMPLEMENTARY SOLUTIONS</span>
+          <h2 class="section-title-large">YOU MIGHT ALSO NEED</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Complement your current platform experience with our other specialized mobile dining and vendor solutions.
+          </p>
+        </div>
+
+        <div class="related-services-grid" id="relatedServicesGrid">
+          
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact detail-cta-section" id="detailCta">
+      <div class="container">
+        
+        <div class="detail-cta-card-box">
+          
+          <div class="cta-card-content">
+            <div class="cta-pill-tag">
+              <i class="fa-solid fa-sparkles"></i>
+              <span id="ctaPillText">FOOD FEAST PLATFORM GUARANTEE</span>
+            </div>
+
+            <h2 class="cta-card-heading" id="ctaHeading">
+              Ready to Plan Something Memorable?
+            </h2>
+
+            <p class="cta-card-paragraph" id="ctaDesc">
+              Submit your event details in under 2 minutes. Receive verified food truck proposals and customized menu quotes from top local mobile chefs.
+            </p>
+
+            <div class="cta-card-actions" id="ctaActions">
+              <button class="btn btn-primary btn-lg" id="ctaPrimaryBtn" onclick="handlePrimaryAction()">
+                <span id="ctaPrimaryBtnText">Start Your Event Request</span> <i class="fa-solid fa-paper-plane" id="ctaPrimaryBtnIcon"></i>
+              </button>
+              <a href="Services.html" class="btn btn-outline-white btn-lg" id="ctaSecondaryBtn">
+                <i class="fa-solid fa-table-cells"></i> <span>View All Services</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-card-graphic">
+            <div class="graphic-circle-halo"></div>
+            <div class="graphic-icon-box" id="ctaGraphicIcon">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="graphic-stat-card">
+              <span class="stat-number" id="ctaStatNum">100%</span>
+              <span class="stat-label" id="ctaStatLabel">Satisfaction Guarantee</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="container footer-container">
+      
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <div class="logo-emblem">
+            <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">FOOD FEAST</span>
+            <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+          </div>
+        </a>
+        <p class="footer-bio">
+          The premier online food truck booking platform connecting hungry food enthusiasts with world-class mobile pitmasters and artisanal street kitchens.
+        </p>
+        <div class="footer-social-links">
+          <a href="javascript:void(0)" onclick="showToast('Connecting on Instagram', 'fa-instagram')" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on Facebook', 'fa-facebook-f')" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on X', 'fa-x-twitter')" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on YouTube', 'fa-youtube')" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Connecting on TikTok', 'fa-tiktok')" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home (Signature)</a></li>
+          <li><a href="Home 2.html">Food Truck Directory</a></li>
+          <li><a href="About.html">About Us & Chefs</a></li>
+          <li><a href="Services.html">All Platform Services</a></li>
+          <li><a href="Services Details.html?service=event-booking">Event Catering Booking</a></li>
+          <li><a href="Services Details.html?service=truck-discovery">Truck Discovery & Radar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Popular Cuisines</h4>
+        <ul class="footer-links">
+          <li><a href="Services.html#cuisine-discovery">Smash Burgers & Angus</a></li>
+          <li><a href="Services.html#cuisine-discovery">Oaxacan Street Tacos</a></li>
+          <li><a href="Services.html#cuisine-discovery">Wood-Fired Pizza 900°</a></li>
+          <li><a href="Services.html#cuisine-discovery">Asian Wok & Bao</a></li>
+          <li><a href="Services.html#cuisine-discovery">Artisanal Waffles & Gelato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">For Vendors</h4>
+        <ul class="footer-links">
+          <li><a href="Services Details.html?service=vendor-management">Vendor Portal & Tools</a></li>
+          <li><a href="signup.html">Vendor Sign Up</a></li>
+          <li><a href="login.html">Vendor Dashboard</a></li>
+          <li><a href="Services.html#core-services">Catering Leads Program</a></li>
+          <li><a href="index.html#contact">Partner Concierge</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="footer-heading">Street Food Alerts</h4>
+        <p class="newsletter-desc">Get weekly notifications when secret gourmet food trucks pop up in your area.</p>
+        <form class="footer-newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+          <div class="newsletter-input-group">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+        <div class="app-badges">
+          <span class="app-badge-pill" onclick="showToast('Food Feast iOS App available on App Store', 'fa-apple')"><i class="fa-brands fa-apple"></i> App Store</span>
+          <span class="app-badge-pill" onclick="showToast('Food Feast Android App available on Google Play', 'fa-google-play')"><i class="fa-brands fa-google-play"></i> Google Play</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">
+          &copy; 2026 <strong>Food Feast Inc.</strong> All rights reserved. Crafted with passion for vibrant street food culture.
+        </p>
+        <div class="footer-legal-links">
+          <a href="javascript:void(0)" onclick="showToast('Privacy Policy opened', 'fa-shield')">Privacy Policy</a>
+          <span>•</span>
+          <a href="javascript:void(0)" onclick="showToast('Terms of Service opened', 'fa-file-contract')">Terms of Service</a>
+          <span>•</span>
+          <a href="javascript:void(0)" onclick="showToast('Hygiene standards certified', 'fa-hand-sparkles')">Security & Hygiene</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeInquiryModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-logo">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <h3 class="modal-title" id="inquiryTitle">Request Event Catering</h3>
+        <p class="modal-subtitle">Tell us about your gathering & get verified quotes</p>
+      </div>
+
+      <form class="modal-form" id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+        <div class="form-group">
+          <label for="inquiryOccasion" class="form-label">Event Occasion Type</label>
+          <select id="inquiryOccasion" class="form-control" required>
+            <option value="corporate">Corporate Event / Office Catering</option>
+            <option value="private">Private Party / Birthday / Celebration</option>
+            <option value="wedding">Wedding / Anniversary</option>
+            <option value="festival">Festival / Multi-Truck Public Event</option>
+          </select>
+        </div>
+
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label for="inquiryGuests" class="form-label">Estimated Guests</label>
+            <input type="number" id="inquiryGuests" class="form-control" min="10" max="10000" placeholder="e.g. 150" value="100" required>
+          </div>
+          <div class="form-group">
+            <label for="inquiryDate" class="form-label">Preferred Date</label>
+            <input type="date" id="inquiryDate" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryEmail" class="form-label">Your Email</label>
+          <input type="email" id="inquiryEmail" class="form-control" placeholder="contact@company.com" required value="planner@event.com">
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryNotes" class="form-label">Cuisine Preferences or Special Requests</label>
+          <textarea id="inquiryNotes" class="form-control" rows="2" placeholder="e.g. Texas BBQ & smash burger trucks with gluten-free options..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 btn-modal-submit">
+          <span>Submit Event Request</span> <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="Services Details.js"></script>
+</body>
+</html>

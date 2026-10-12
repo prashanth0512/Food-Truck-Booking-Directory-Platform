@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Feast — Vendor Operating System & Dashboard</title>
+  <meta name="description"
+    content="Comprehensive vendor dashboard for managing daily location schedules, updating menu items, tracking live customer orders, and monitoring earnings.">
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('foodfeast_theme') || localStorage.getItem('ff_theme') || 'light';
+      var canonical = (saved === 'charcoal' || saved === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', canonical);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <div class="dashboard-layout" id="dashboardLayout">
+
+    <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="Vendor Sidebar Navigation">
+
+      <div class="sidebar-brand-wrapper">
+        <a href="index.html" class="sidebar-brand-logo" id="sidebarBrandLogo" title="Back to Food Feast Homepage">
+          <div class="logo-emblem">
+            <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">FOOD FEAST</span>
+            <span class="brand-subtitle">VENDOR DASHBOARD</span>
+          </div>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Mobile Sidebar"
+          onclick="toggleMobileSidebar(false)">&times;</button>
+      </div>
+
+      <div class="sidebar-radar-beacon">
+        <div class="beacon-indicator">
+          <span class="pulse-beacon"></span>
+          <span class="beacon-label">LIVE ON STREET RADAR</span>
+        </div>
+        <div class="beacon-location">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Austin Arts District (Spot #12)</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Dashboard Views">
+        <div class="nav-group-label">MAIN CONTROL DESK</div>
+        <ul class="sidebar-nav-list">
+
+          <li class="sidebar-nav-item">
+            <button type="button" class="sidebar-nav-link active" data-view="overview" id="navLinkOverview"
+              onclick="switchDashboardView('overview')">
+              <div class="nav-link-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <span class="nav-link-title">Overview</span>
+              <span class="nav-pill-badge tag-live">Live</span>
+            </button>
+          </li>
+
+          <li class="sidebar-nav-item">
+            <button type="button" class="sidebar-nav-link" data-view="schedules" id="navLinkSchedules"
+              onclick="switchDashboardView('schedules')">
+              <div class="nav-link-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <span class="nav-link-title">Location Schedules</span>
+            </button>
+          </li>
+
+          <li class="sidebar-nav-item">
+            <button type="button" class="sidebar-nav-link" data-view="menu" id="navLinkMenu"
+              onclick="switchDashboardView('menu')">
+              <div class="nav-link-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <span class="nav-link-title">Menu Management</span>
+              <span class="nav-pill-badge tag-dishes" id="navMenuCountBadge">8 Dishes</span>
+            </button>
+          </li>
+
+          <li class="sidebar-nav-item">
+            <button type="button" class="sidebar-nav-link" data-view="orders" id="navLinkOrders"
+              onclick="switchDashboardView('orders')">
+              <div class="nav-link-icon">
+                <i class="fa-solid fa-bell-concierge"></i>
+              </div>
+              <span class="nav-link-title">Orders & Tracking</span>
+              <span class="nav-pill-badge tag-active-orders" id="navActiveOrdersBadge">6 Active</span>
+            </button>
+          </li>
+
+          <li class="sidebar-nav-item">
+            <button type="button" class="sidebar-nav-link" data-view="earnings" id="navLinkEarnings"
+              onclick="switchDashboardView('earnings')">
+              <div class="nav-link-icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+              <span class="nav-link-title">Earnings & Payouts</span>
+            </button>
+          </li>
+
+        </ul>
+
+        <div class="nav-group-label" style="margin-top: 24px;">QUICK PLATFORM SHORTCUTS</div>
+        <ul class="sidebar-nav-list sub-nav-list">
+          <li>
+            <a href="index.html" class="sidebar-nav-link shortcut-link">
+              <div class="nav-link-icon"><i class="fa-solid fa-globe"></i></div>
+              <span class="nav-link-title">View Public Directory</span>
+              <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="Contact.html" class="sidebar-nav-link shortcut-link">
+              <div class="nav-link-icon"><i class="fa-solid fa-headset"></i></div>
+              <span class="nav-link-title">Vendor Concierge Hotline</span>
+            </a>
+          </li>
+          <li class="mobile-only-shortcut">
+            <button type="button" class="sidebar-nav-link shortcut-link"
+              onclick="openFlashSpecialModal(); toggleMobileSidebar(false);">
+              <div class="nav-link-icon"><i class="fa-solid fa-bolt" style="color: var(--accent-red);"></i></div>
+              <span class="nav-link-title">Broadcast Flash Special</span>
+            </button>
+          </li>
+          <li class="mobile-only-shortcut">
+            <button type="button" class="sidebar-nav-link shortcut-link" onclick="toggleRTLMode()">
+              <div class="nav-link-icon"><i class="fa-solid fa-language"></i></div>
+              <span class="nav-link-title">Switch RTL / LTR</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="truck-profile-card">
+          <div class="truck-avatar-wrap">
+            <img src="assets/chef_marcus.jpg" alt="Chef Marcus Cole portrait" class="truck-avatar-img">
+            <span class="truck-online-dot"></span>
+          </div>
+          <div class="truck-profile-info">
+            <strong class="truck-name">Lone Star Pitmaster</strong>
+            <span class="truck-id">Truck #402 • Austin Flagship</span>
+          </div>
+          <button type="button" class="btn-sidebar-logout" id="sidebarLogoutBtn" title="Logout from Vendor Portal"
+            onclick="handleLogout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </div>
+
+    </aside>
+
+    <div class="dashboard-main" id="dashboardMain">
+
+      <header class="dashboard-topbar" id="dashboardTopbar">
+
+        <div class="topbar-left">
+          <button type="button" class="mobile-sidebar-toggle-btn" id="mobileSidebarToggleBtn"
+            aria-label="Open Sidebar Menu" onclick="toggleMobileSidebar(true)">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="topbar-heading-wrap">
+            <h1 class="topbar-title"><span class="topbar-welcome-prefix">Welcome Back</span><span
+                class="topbar-chef-name">, <span class="text-gold" id="welcomeChefName">Chef Marcus</span> 👨‍🍳</span>
+            </h1>
+            <span class="topbar-status-chip">
+              <span class="pulse-dot"></span> Shift Active • Austin Flagship
+            </span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+
+          <button type="button" class="topbar-flash-btn" onclick="openFlashSpecialModal()"
+            title="Broadcast Flash Special">
+            <i class="fa-solid fa-bolt"></i> <span>Flash Special</span>
+          </button>
+
+          <div class="topbar-dropdown-wrap" id="notificationDropdownWrap">
+            <button type="button" class="topbar-icon-btn" id="notificationBtn" aria-label="View notifications"
+              title="Notifications" onclick="toggleNotificationDropdown(event)">
+              <i class="fa-solid fa-bell"></i>
+              <span class="topbar-badge" id="notificationCountBadge">3</span>
+            </button>
+
+            <div class="topbar-dropdown-menu notification-menu" id="notificationMenu">
+              <div class="dropdown-menu-header">
+                <strong>Vendor Notifications</strong>
+                <button type="button" class="btn-clear-notifications" onclick="clearAllNotifications()">Mark all
+                  read</button>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item unread">
+                  <div class="notif-icon notif-order"><i class="fa-solid fa-burger"></i></div>
+                  <div class="notif-content">
+                    <p class="notif-text"><strong>New Catering Pre-Order #1042</strong> received for 12x Loaded Rib
+                      Platters.</p>
+                    <span class="notif-time">2 mins ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notif-icon notif-alert"><i class="fa-solid fa-map-pin"></i></div>
+                  <div class="notif-content">
+                    <p class="notif-text"><strong>City Permit Approved</strong> for Austin Arts District weekend
+                      festival pop-up.</p>
+                    <span class="notif-time">18 mins ago</span>
+                  </div>
+                </div>
+                <div class="notification-item unread">
+                  <div class="notif-icon notif-payout"><i class="fa-solid fa-money-bill-wave"></i></div>
+                  <div class="notif-content">
+                    <p class="notif-text"><strong>Weekly Payout of $4,850.00</strong> successfully transferred to your
+                      bank.</p>
+                    <span class="notif-time">2 hours ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-menu-footer">
+                <a href="#orders" onclick="switchDashboardView('orders'); closeDropdowns();">View all live orders
+                  &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="topbar-icon-btn theme-toggle-btn" id="themeToggleBtn"
+            aria-label="Toggle Theme Mode" title="Switch Light / Dark Theme" onclick="cycleThemeMode()">
+            <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+          </button>
+
+          <button type="button" class="topbar-icon-btn rtl-toggle-btn" id="rtlToggleBtn"
+            aria-label="Toggle Text Direction" title="Switch LTR / RTL Direction" onclick="toggleRTLMode()">
+            <span id="rtlTextDisplay">RTL</span>
+          </button>
+
+          <div class="topbar-divider"></div>
+
+          <div class="topbar-dropdown-wrap" id="profileDropdownWrap">
+            <button type="button" class="topbar-profile-btn" id="profileBtn" aria-label="Open User Profile Menu"
+              onclick="toggleProfileDropdown(event)">
+              <img src="assets/chef_marcus.jpg" alt="Chef Marcus avatar" class="topbar-avatar-img">
+              <span class="topbar-profile-name">Chef Marcus</span>
+              <i class="fa-solid fa-chevron-down profile-chevron"></i>
+            </button>
+
+            <div class="topbar-dropdown-menu profile-menu" id="profileMenu">
+              <div class="profile-menu-header">
+                <img src="assets/chef_marcus.jpg" alt="Chef Marcus avatar" class="menu-avatar-img">
+                <div>
+                  <strong class="user-display-name">Marcus Sterling Cole</strong>
+                  <span class="user-email-display">marcus@lonestarpitmaster.com</span>
+                  <span class="user-status-pill"><i class="fa-solid fa-circle-check"></i> Certified Food Feast
+                    Master</span>
+                </div>
+              </div>
+
+              <div class="menu-divider"></div>
+
+              <ul class="profile-menu-links">
+                <li>
+                  <a href="#schedules" onclick="switchDashboardView('schedules'); closeDropdowns();">
+                    <i class="fa-solid fa-location-crosshairs"></i> <span>Manage GPS & Spot Radar</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#menu" onclick="switchDashboardView('menu'); closeDropdowns();">
+                    <i class="fa-solid fa-utensils"></i> <span>Edit Daily Menu & Specials</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#earnings" onclick="switchDashboardView('earnings'); closeDropdowns();">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> <span>Payouts & Bank Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="Contact.html" target="_blank">
+                    <i class="fa-solid fa-shield-heart"></i> <span>Hygiene & Permit Documents</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="Contact.html" target="_blank">
+                    <i class="fa-solid fa-circle-question"></i> <span>24/7 Priority Support Hotline</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="menu-divider"></div>
+
+              <div class="profile-menu-footer">
+                <button type="button" class="btn-logout-action" onclick="handleLogout()">
+                  <i class="fa-solid fa-right-from-bracket"></i> <span>Log Out of Dashboard</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </header>
+
+      <main class="dashboard-content-area" id="dashboardContentArea">
+
+        <section class="dashboard-view-panel active animate-fade-in" id="view-overview"
+          aria-label="Overview Dashboard View">
+
+          <div class="view-header-strip">
+            <div>
+              <span class="view-eyebrow">LIVE ANALYTICS & TELEMETRY</span>
+              <h2 class="view-title">VENDOR PERFORMANCE OVERVIEW</h2>
+            </div>
+            <div class="view-header-actions">
+              <div class="timeframe-picker">
+                <button type="button" class="timeframe-btn active" data-range="today"
+                  onclick="setTimeframe('today')">Today</button>
+                <button type="button" class="timeframe-btn" data-range="7d" onclick="setTimeframe('7d')">7 Days</button>
+                <button type="button" class="timeframe-btn" data-range="30d" onclick="setTimeframe('30d')">30
+                  Days</button>
+                <button type="button" class="timeframe-btn" data-range="1y" onclick="setTimeframe('1y')">This
+                  Year</button>
+              </div>
+              <button type="button" class="btn btn-outline-white btn-sm" onclick="refreshDashboardData()">
+                <i class="fa-solid fa-rotate"></i> <span>Live Refresh</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">GROSS REVENUE (MONTH)</span>
+                <div class="kpi-icon-box gold"><i class="fa-solid fa-dollar-sign"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value" id="kpiGrossRevenue">$48,290.00</strong>
+                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +18.4%</span>
+              </div>
+              <span class="kpi-subtext">Includes $14,200 from corporate catering contracts</span>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">TOTAL SHIFT ORDERS</span>
+                <div class="kpi-icon-box blue"><i class="fa-solid fa-receipt"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value" id="kpiTotalOrders">142 Orders</strong>
+                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12.6%</span>
+              </div>
+              <span class="kpi-subtext"><strong class="text-gold" id="kpiKitchenQueue">6 orders</strong> currently
+                sizzling in prep queue</span>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">LIVE RADAR REACH</span>
+                <div class="kpi-icon-box green"><i class="fa-solid fa-satellite-dish"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value" id="kpiRadarHits">3,840 Foodies</strong>
+                <span class="kpi-trend positive"><i class="fa-solid fa-users"></i> Nearby</span>
+              </div>
+              <span class="kpi-subtext">Viewed your location within 5-mile radius today</span>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">CUSTOMER SATISFACTION</span>
+                <div class="kpi-icon-box amber"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="kpi-value-row">
+                <strong class="kpi-value" id="kpiRating">4.96 ★</strong>
+                <span class="kpi-trend neutral">99.4% Positive</span>
+              </div>
+              <span class="kpi-subtext">520+ verified community taste reviews</span>
+            </div>
+
+          </div>
+
+          <div class="charts-split-grid-row">
+
+            <div class="chart-card-box span-2">
+              <div class="chart-card-header">
+                <div>
+                  <h3 class="chart-title">Revenue & Orders Velocity</h3>
+                  <span class="chart-subtitle">Real-time hourly and daily sales volume comparison</span>
+                </div>
+                <div class="chart-legend-pills">
+                  <span class="legend-pill gold"><span class="legend-dot gold"></span> Gross Sales ($)</span>
+                  <span class="legend-pill amber"><span class="legend-dot amber"></span> Order Count</span>
+                </div>
+              </div>
+              <div class="chart-canvas-wrapper" style="height: 300px; position: relative;">
+                <canvas id="revenueLineChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card-box">
+              <div class="chart-card-header">
+                <div>
+                  <h3 class="chart-title">Sales Channel Distribution</h3>
+                  <span class="chart-subtitle">Revenue by order type</span>
+                </div>
+              </div>
+              <div class="chart-canvas-wrapper donut-canvas-wrap" style="height: 240px; position: relative;">
+                <canvas id="salesDonutChart"></canvas>
+              </div>
+              <div class="donut-legend-breakdown" id="donutLegendBreakdown">
+                <div class="donut-stat-item">
+                  <span class="donut-color-dot" style="background: #f8b825;"></span>
+                  <span class="donut-label">Corporate Catering</span>
+                  <strong class="donut-val">52% ($25.1k)</strong>
+                </div>
+                <div class="donut-stat-item">
+                  <span class="donut-color-dot" style="background: #e67e22;"></span>
+                  <span class="donut-label">Curbside Pre-Order</span>
+                  <strong class="donut-val">32% ($15.4k)</strong>
+                </div>
+                <div class="donut-stat-item">
+                  <span class="donut-color-dot" style="background: #e74c3c;"></span>
+                  <span class="donut-label">Walk-Up Street POS</span>
+                  <strong class="donut-val">16% ($7.7k)</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="charts-split-grid-row">
+
+            <div class="chart-card-box">
+              <div class="chart-card-header">
+                <div>
+                  <h3 class="chart-title">Top Selling Signature Dishes</h3>
+                  <span class="chart-subtitle">Volume sold across the current billing period</span>
+                </div>
+                <span class="chart-badge">Pitmaster Leaderboard</span>
+              </div>
+              <div class="chart-canvas-wrapper" style="height: 260px; position: relative;">
+                <canvas id="topDishesBarChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card-box">
+              <div class="chart-card-header">
+                <div>
+                  <h3 class="chart-title">Live Kitchen Telemetry & Radar</h3>
+                  <span class="chart-subtitle">Connected equipment & spot specs</span>
+                </div>
+                <span class="status-badge-live"><span class="pulse-beacon"></span> ONLINE</span>
+              </div>
+
+              <div class="telemetry-grid">
+                <div class="telemetry-item">
+                  <div class="telemetry-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                  <div class="telemetry-data">
+                    <span class="telemetry-label">Shore Power Hookup</span>
+                    <strong class="telemetry-value">240V / 50A Active</strong>
+                  </div>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="telemetry-icon"><i class="fa-solid fa-solar-panel"></i></div>
+                  <div class="telemetry-data">
+                    <span class="telemetry-label">Auxiliary Solar Battery</span>
+                    <strong class="telemetry-value">98% Charged (4.2 kW)</strong>
+                  </div>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="telemetry-icon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+                  <div class="telemetry-data">
+                    <span class="telemetry-label">Smoker White Oak Pit</span>
+                    <strong class="telemetry-value">225°F Constant Smoke</strong>
+                  </div>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="telemetry-icon"><i class="fa-solid fa-snowflake"></i></div>
+                  <div class="telemetry-data">
+                    <span class="telemetry-label">Refrigeration Unit</span>
+                    <strong class="telemetry-value">36.2°F (Compliant)</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="telemetry-action-bar">
+                <div class="active-spot-text">
+                  <i class="fa-solid fa-location-dot text-gold"></i>
+                  <span>Parked at: <strong>412 Congress Ave, Austin Flagship Depot</strong></span>
+                </div>
+                <button type="button" class="btn btn-outline-white btn-sm" onclick="switchDashboardView('schedules')">
+                  Change Spot
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="chart-card-box">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title">Recent Customer Orders & Transactions</h3>
+                <span class="chart-subtitle">Live real-time feed of street orders and catering deposits</span>
+              </div>
+              <button type="button" class="btn btn-outline-white btn-sm" onclick="switchDashboardView('orders')">
+                <span>View All Orders </span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Order #</th>
+                    <th>Customer Name</th>
+                    <th>Ordered Dishes</th>
+                    <th>Total</th>
+                    <th>Order Type</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="overviewRecentOrdersTableBody">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="dashboard-view-panel animate-fade-in" id="view-schedules" aria-label="Location Schedules View">
+
+          <div class="view-header-strip">
+            <div>
+              <span class="view-eyebrow">GPS DEPLOYMENT & DISPATCH PLANNER</span>
+              <h2 class="view-title">DAILY LOCATION SCHEDULES & POP-UPS</h2>
+            </div>
+            <div class="view-header-actions">
+              <button type="button" class="btn btn-outline-white btn-sm" onclick="openScheduleModal()">
+                <i class="fa-solid fa-plus"></i> <span>Add New Shift Slot</span>
+              </button>
+              <button type="button" class="btn btn-primary btn-sm"
+                onclick="showToast('Schedule synced with public radar app!', 'fa-satellite-dish')">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Sync Radar Map</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="radar-broadcast-banner">
+            <div class="broadcast-left">
+              <div class="broadcast-icon-box">
+                <i class="fa-solid fa-tower-broadcast"></i>
+              </div>
+              <div class="broadcast-text">
+                <h3>Live Radar Broadcast Control</h3>
+                <p>When enabled, your exact GPS coordinates and menu specials broadcast instantly to 24,000+ mobile Food
+                  Feast app users in Austin metro.</p>
+              </div>
+            </div>
+            <div class="broadcast-right">
+              <label class="switch-toggle" id="radarBroadcastSwitch">
+                <input type="checkbox" id="radarBroadcastInput" checked
+                  onchange="handleRadarBroadcastToggle(this.checked)">
+                <span class="switch-slider"></span>
+              </label>
+              <span class="switch-status-text" id="radarStatusLabel">BROADCASTING LIVE</span>
+            </div>
+          </div>
+
+          <div class="chart-card-box">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title">7-Day Deployment Schedule & Permit Status</h3>
+                <span class="chart-subtitle">Assigned curbside parking spots, private event bookings, and health
+                  inspection clearances</span>
+              </div>
+              <div class="filter-pills-group">
+                <span class="status-tag confirmed"><span class="status-dot"></span> 5 Confirmed</span>
+                <span class="status-tag pending"><span class="status-dot"></span> 1 Permit Pending</span>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="dashboard-table" id="schedulesTable">
+                <thead>
+                  <tr>
+                    <th>Day & Date</th>
+                    <th>Location / Event Venue</th>
+                    <th>City & Address</th>
+                    <th>Operating Shift</th>
+                    <th>Expected Footfall</th>
+                    <th>Permit / Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="schedulesTableBody">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="dashboard-view-panel animate-fade-in" id="view-menu" aria-label="Menu Management View">
+
+          <div class="view-header-strip">
+            <div>
+              <span class="view-eyebrow">INVENTORY & DISH CONFIGURATION</span>
+              <h2 class="view-title">MENU MANAGEMENT & LIVE SPECIALS</h2>
+            </div>
+            <div class="view-header-actions">
+              <div class="menu-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="menuSearchInput" placeholder="Search dish..."
+                  oninput="handleMenuSearch(this.value)">
+              </div>
+              <button type="button" class="btn btn-primary btn-sm" onclick="openAddDishModal()">
+                <i class="fa-solid fa-plus"></i> <span>Add New Dish</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-category-tabs" id="menuCategoryTabs">
+            <button type="button" class="category-tab-btn active" data-category="all"
+              onclick="filterMenuCategory('all')">All Items (8)</button>
+            <button type="button" class="category-tab-btn" data-category="bbq" onclick="filterMenuCategory('bbq')">🔥
+              Smoked BBQ</button>
+            <button type="button" class="category-tab-btn" data-category="burgers"
+              onclick="filterMenuCategory('burgers')">🍔 Smash Burgers</button>
+            <button type="button" class="category-tab-btn" data-category="sides"
+              onclick="filterMenuCategory('sides')">🍟 Loaded Sides</button>
+            <button type="button" class="category-tab-btn" data-category="drinks"
+              onclick="filterMenuCategory('drinks')">🥤 Drinks & Sweets</button>
+          </div>
+
+          <div class="menu-items-grid" id="menuItemsGrid">
+            
+          </div>
+
+        </section>
+
+        <section class="dashboard-view-panel animate-fade-in" id="view-orders" aria-label="Orders & Tracking View">
+
+          <div class="view-header-strip">
+            <div>
+              <span class="view-eyebrow">LIVE KITCHEN FULFILLMENT & SMS DISPATCH</span>
+              <h2 class="view-title">ORDERS QUEUE & TRACKING</h2>
+            </div>
+            <div class="view-header-actions">
+              <div class="order-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="orderSearchInput" placeholder="Search by customer or order #..."
+                  oninput="handleOrderSearch(this.value)">
+              </div>
+              <button type="button" class="btn btn-outline-white btn-sm" onclick="simulateNewIncomingOrder()">
+                <i class="fa-solid fa-plus"></i> <span>Simulate New Order</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="order-status-tabs" id="orderStatusTabs">
+            <button type="button" class="order-tab-btn active" data-status="all" onclick="filterOrderStatus('all')">
+              <span>All Active</span> <strong class="badge-num" id="countAllOrders">6</strong>
+            </button>
+            <button type="button" class="order-tab-btn" data-status="incoming" onclick="filterOrderStatus('incoming')">
+              <span>Incoming New</span> <strong class="badge-num yellow" id="countIncomingOrders">2</strong>
+            </button>
+            <button type="button" class="order-tab-btn" data-status="cooking" onclick="filterOrderStatus('cooking')">
+              <span>On Grill / Cooking</span> <strong class="badge-num blue" id="countCookingOrders">3</strong>
+            </button>
+            <button type="button" class="order-tab-btn" data-status="ready" onclick="filterOrderStatus('ready')">
+              <span>Ready for Pickup</span> <strong class="badge-num green" id="countReadyOrders">1</strong>
+            </button>
+            <button type="button" class="order-tab-btn" data-status="completed"
+              onclick="filterOrderStatus('completed')">
+              <span>Completed Today</span> <strong class="badge-num dim" id="countCompletedOrders">38</strong>
+            </button>
+          </div>
+
+          <div class="orders-cards-grid" id="ordersCardsGrid">
+            
+          </div>
+
+        </section>
+
+        <section class="dashboard-view-panel animate-fade-in" id="view-earnings" aria-label="Earnings & Payouts View">
+
+          <div class="view-header-strip">
+            <div>
+              <span class="view-eyebrow">FINANCIAL SETTLEMENT & INVOICING</span>
+              <h2 class="view-title">EARNINGS & PAYOUT HISTORY</h2>
+            </div>
+            <div class="view-header-actions">
+              <button type="button" class="btn btn-outline-white btn-sm" onclick="downloadFinancialReport()">
+                <i class="fa-solid fa-file-arrow-down"></i> <span>Export Statement (CSV/PDF)</span>
+              </button>
+              <button type="button" class="btn btn-primary btn-sm" onclick="openPayoutModal()">
+                <i class="fa-solid fa-money-bill-transfer"></i> <span>Request Instant Payout</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="earnings-summary-grid">
+
+            <div class="earning-stat-card primary-card">
+              <div class="earning-stat-top">
+                <span>AVAILABLE PAYOUT BALANCE</span>
+                <i class="fa-solid fa-vault"></i>
+              </div>
+              <strong class="earning-big-val" id="earningAvailableBalance">$8,450.00</strong>
+              <div class="earning-stat-footer">
+                <span class="payout-status-chip"><i class="fa-solid fa-circle-check"></i> Ready to transfer</span>
+                <span class="payout-bank-tag">Chase **** 4821</span>
+              </div>
+            </div>
+
+            <div class="earning-stat-card">
+              <div class="earning-stat-top">
+                <span>30-DAY NET REVENUE</span>
+                <i class="fa-solid fa-chart-line text-gold"></i>
+              </div>
+              <strong class="earning-big-val">$48,290.00</strong>
+              <div class="earning-stat-footer">
+                <span class="trend-text positive"><i class="fa-solid fa-arrow-trend-up"></i> +18.4% YoY</span>
+                <span>420 Transactions</span>
+              </div>
+            </div>
+
+            <div class="earning-stat-card">
+              <div class="earning-stat-top">
+                <span>0% COMMISSION SAVINGS</span>
+                <i class="fa-solid fa-piggy-bank text-green"></i>
+              </div>
+              <strong class="earning-big-val text-gold">$4,829.00</strong>
+              <div class="earning-stat-footer">
+                <span class="promo-tag">Special Vendor Tier</span>
+                <span>$0 Platform Fees</span>
+              </div>
+            </div>
+
+            <div class="earning-stat-card">
+              <div class="earning-stat-top">
+                <span>UPCOMING CATERING ESCROW</span>
+                <i class="fa-solid fa-shield-halved text-blue"></i>
+              </div>
+              <strong class="earning-big-val">$12,600.00</strong>
+              <div class="earning-stat-footer">
+                <span>3 Locked Contracts</span>
+                <span>Releases on Event Date</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="chart-card-box">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title">Settlement & Direct Deposit History</h3>
+                <span class="chart-subtitle">Audit logs for weekly ACH deposits, tips, and corporate event
+                  invoicing</span>
+              </div>
+              <span class="status-badge-verified"><i class="fa-solid fa-lock"></i> Bank Verified & Encrypted</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="dashboard-table" id="payoutsTable">
+                <thead>
+                  <tr>
+                    <th>Payout Ref #</th>
+                    <th>Settlement Date</th>
+                    <th>Sales Batch / Event Type</th>
+                    <th>Payout Method</th>
+                    <th>Gross Amount</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody id="payoutsTableBody">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleMobileSidebar(false)"></div>
+
+  <div class="modal-backdrop" id="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishModalTitle">
+    <div class="modal-card modal-lg">
+      <button class="modal-close-btn" onclick="closeDishModal()">&times;</button>
+      <h3 class="modal-title" id="dishModalTitle">Add New Menu Item</h3>
+      <p class="modal-subtitle">Configure pricing, prep time, signature ingredients, and availability.</p>
+
+      <form class="modal-form" id="dishForm" onsubmit="handleDishFormSubmit(event)">
+        <input type="hidden" id="dishEditId" value="">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="dishNameInput">Dish Name <span class="text-gold">*</span></label>
+            <input type="text" id="dishNameInput" class="form-control" placeholder="e.g. 16-Hour Smoked Brisket Platter"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dishCategoryInput">Category <span class="text-gold">*</span></label>
+            <select id="dishCategoryInput" class="form-control" required>
+              <option value="bbq">🔥 Smoked BBQ & Ribs</option>
+              <option value="burgers">🍔 Smash Burgers</option>
+              <option value="sides">🍟 Loaded Sides & Fries</option>
+              <option value="drinks">🥤 Beverages & Sweets</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="dishPriceInput">Price ($ USD) <span class="text-gold">*</span></label>
+            <input type="number" id="dishPriceInput" class="form-control" placeholder="18.50" step="0.50" min="1"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dishPrepTimeInput">Estimated Prep Time <span
+                class="text-gold">*</span></label>
+            <input type="text" id="dishPrepTimeInput" class="form-control" placeholder="e.g. 6–8 Mins" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dishPhotoUrlInput">Photo Image URL</label>
+          <input type="url" id="dishPhotoUrlInput" class="form-control"
+            placeholder="https://images.unsplash.com/photo-...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dishDescInput">Description & Ingredients <span
+              class="text-gold">*</span></label>
+          <textarea id="dishDescInput" class="form-control" rows="3"
+            placeholder="Describe the flavors, smoking hardwood, seasonings, and side pairings..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dishTagsInput">Dietary / Flavor Tags (Comma Separated)</label>
+          <input type="text" id="dishTagsInput" class="form-control"
+            placeholder="e.g. Hickory Smoked, 14-Spice Dry Rub, Gluten-Free Option">
+        </div>
+
+        <div class="modal-actions-row">
+          <button type="button" class="btn btn-outline-white" onclick="closeDishModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="dishSubmitBtn">Save Menu Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="scheduleModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeScheduleModal()">&times;</button>
+      <h3 class="modal-title">Schedule New Location Shift</h3>
+      <p class="modal-subtitle">Assign your food truck to a designated pop-up spot or event.</p>
+
+      <form class="modal-form" id="scheduleForm" onsubmit="handleScheduleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="schedDayInput">Day & Date</label>
+          <input type="text" id="schedDayInput" class="form-control" placeholder="e.g. Saturday, Oct 24" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="schedVenueInput">Venue / Event Name</label>
+          <input type="text" id="schedVenueInput" class="form-control" placeholder="e.g. Zilker Park Food Truck Rally"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="schedAddressInput">Street Address & City</label>
+          <input type="text" id="schedAddressInput" class="form-control"
+            placeholder="e.g. 2100 Barton Springs Rd, Austin, TX" required>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="schedShiftInput">Operating Hours</label>
+            <input type="text" id="schedShiftInput" class="form-control" placeholder="e.g. 11:00 AM – 9:00 PM" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="schedFootfallInput">Expected Footfall</label>
+            <input type="text" id="schedFootfallInput" class="form-control" placeholder="e.g. 800+ Attendees" required>
+          </div>
+        </div>
+
+        <div class="modal-actions-row">
+          <button type="button" class="btn btn-outline-white" onclick="closeScheduleModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Publish to Radar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="flashSpecialModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeFlashSpecialModal()">&times;</button>
+      <h3 class="modal-title">⚡ Broadcast Flash Special</h3>
+      <p class="modal-subtitle">Send an instant alert to foodies within 3 miles with a limited-time perk.</p>
+
+      <form class="modal-form" onsubmit="handleFlashSpecialSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="flashSpecialTitle">Special Offer Headline</label>
+          <input type="text" id="flashSpecialTitle" class="form-control"
+            placeholder="e.g. FREE Loaded Truffle Fries with Any Rib Platter!" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="flashSpecialDuration">Offer Duration</label>
+          <select id="flashSpecialDuration" class="form-control">
+            <option value="60">Next 60 Minutes Only</option>
+            <option value="120" selected>Next 2 Hours (Lunch Rush)</option>
+            <option value="all-day">Until Tonight's Close</option>
+          </select>
+        </div>
+
+        <div class="modal-actions-row">
+          <button type="button" class="btn btn-outline-white" onclick="closeFlashSpecialModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Broadcast to Nearby Users</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="payoutModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closePayoutModal()">&times;</button>
+      <h3 class="modal-title">Confirm Instant Payout</h3>
+      <p class="modal-subtitle">Transfer available funds directly to your verified commercial checking account.</p>
+
+      <div class="payout-modal-summary">
+        <div class="payout-summary-row">
+          <span>Available Net Balance:</span>
+          <strong>$8,450.00</strong>
+        </div>
+        <div class="payout-summary-row">
+          <span>Transfer Fee (Instant ACH):</span>
+          <span class="text-green">FREE ($0.00)</span>
+        </div>
+        <div class="payout-summary-row total-row">
+          <span>Total Deposited:</span>
+          <strong class="text-gold">$8,450.00</strong>
+        </div>
+        <div class="payout-destination-box">
+          <i class="fa-solid fa-building-columns"></i>
+          <div>
+            <strong>Chase Business Checking</strong>
+            <small>Account ending in •••• 4821</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions-row">
+        <button type="button" class="btn btn-outline-white" onclick="closePayoutModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="executePayout()">Confirm & Transfer Funds</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
