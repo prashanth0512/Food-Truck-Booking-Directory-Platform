@@ -30,13 +30,17 @@ function initTheme() {
   }
 
   function setTheme(theme) {
-    htmlRoot.setAttribute('data-theme', theme);
-    localStorage.setItem('ff_theme', theme);
-    localStorage.setItem('foodfeast_theme', theme);
+    const isDark = (theme === 'dark' || theme === 'charcoal');
+    const canonicalTheme = isDark ? 'dark' : 'light';
+    htmlRoot.setAttribute('data-theme', canonicalTheme);
+    localStorage.setItem('ff_theme', canonicalTheme);
+    localStorage.setItem('foodfeast_theme', canonicalTheme);
 
     if (themeToggleBtn) {
-      const iconType = theme === 'dark' ? 'moon' : 'sun';
+      const iconType = isDark ? 'sun' : 'moon';
       themeToggleBtn.innerHTML = `<i data-lucide="${iconType}" id="themeLucideIcon" class="theme-lucide-icon"></i>`;
+      themeToggleBtn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+      themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
       if (window.lucide) {
         window.lucide.createIcons();
       }

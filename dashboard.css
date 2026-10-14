@@ -749,6 +749,13 @@ ul, ol {
   transform: translateY(-1px);
 }
 
+.topbar-icon-btn.theme-toggle-btn svg,
+.topbar-icon-btn.theme-toggle-btn .theme-lucide-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 .topbar-badge {
   position: absolute;
   top: -2px;

@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="burgundy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Feast — Home 2 (Live Grid & Food Truck Explorer)</title>
+  <meta name="description" content="Discover nearby artisan food trucks, explore street food ideologies, automated circle truck radars, and book premier mobile gourmet catering.">
+  <meta name="keywords" content="food feast, food truck explorer, live food trucks, catering booking, street gastronomy, gourmet pitmasters">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="Home 2.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <a href="index.html" class="brand-logo" id="brandLogo" aria-label="Food Feast Home">
+        <div class="logo-emblem">
+          <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          
+          <li class="nav-item dropdown" id="homeDropdownItem">
+            <a href="Home 2.html" class="nav-link dropdown-toggle active" id="homeDropdownToggle" aria-haspopup="true" aria-expanded="false">
+              HOME <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu" id="homeDropdownMenu">
+              <li>
+                <a href="index.html" class="dropdown-link" id="navHome1">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 1 (Signature)</span>
+                    <span class="drop-desc">Hero BBQ Truck & Daily Specials</span>
+                  </div>
+                  <span class="preview-tag">Classic</span>
+                </a>
+              </li>
+              <li>
+                <a href="Home 2.html" class="dropdown-link active" id="navHome2">
+                  <div class="drop-item-content">
+                    <span class="drop-title">Home 2 (Live Grid)</span>
+                    <span class="drop-desc">Interactive Radar & Cuisine Finder</span>
+                  </div>
+                  <span class="current-badge">Active</span>
+                </a>
+              </li>
+              <li>
+                <a href="About.html" class="dropdown-link" id="navAbout">
+                  <div class="drop-item-content">
+                    <span class="drop-title">About Us (Our Chefs)</span>
+                    <span class="drop-desc">Mission, Heritage & Chef Roster</span>
+                  </div>
+                  <span class="preview-tag">Explore</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="About.html" class="nav-link" id="navChefs">OUR CHEFS</a>
+          </li>
+          <li class="nav-item">
+            <a href="Services.html" class="nav-link" id="navServices">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a href="Contact.html" class="nav-link" id="navContact">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" id="navDashboard">
+              DASHBOARD <span class="nav-live-dot"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        
+        <button class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+        </button>
+
+        <button class="action-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle Text Direction" title="Switch Direction (LTR / RTL)">
+          <span id="rtlText">RTL</span>
+        </button>
+
+        <a href="login.html" class="btn btn-primary login-btn" id="loginBtn" aria-label="Go to Login Page">
+          <i class="fa-solid fa-user-circle"></i>
+          <span>LOGIN</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-text">
+        <span class="brand-title">FOOD FEAST</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+      <li><a href="Home 2.html" class="mobile-nav-link active">Home 2</a></li>
+      <li><a href="About.html" class="mobile-nav-link">About (our Chefs)</a></li>
+      <li><a href="Services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="Contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn btn-primary w-100 mobile-login-btn" id="mobileLoginBtn">
+        <i class="fa-solid fa-user-circle"></i>
+        <span>Login / Register</span>
+      </a>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <section class="home2-hero-section" id="home">
+      <div class="home2-hero-backdrop">
+        <div class="home2-hero-glow-1"></div>
+        <div class="home2-hero-glow-2"></div>
+      </div>
+
+      <div class="container home2-hero-container">
+        
+        <div class="home2-hero-content">
+          <div class="home2-hero-badge">
+            <span class="pulse-beacon"></span>
+            <span>LIVE GOURMET STREET NETWORK</span>
+          </div>
+
+          <h1 class="home2-hero-title">
+            CULINARY MASTERS<br><span>ON WHEELS</span>
+          </h1>
+
+          <div class="home2-hero-dash"></div>
+
+          <p class="home2-hero-lead">
+            Experience the revolution of mobile gastronomy. Track live chef-driven kitchens, discover signature street delicacies, or hire the city's finest food trucks for unforgettable private events.
+          </p>
+
+          <div class="home2-hero-chips" id="heroCuisineChips">
+            <button class="hero-chip active" data-category="all" onclick="filterCircleTrucks('all')">
+              <i class="fa-solid fa-border-all"></i> All Fleet
+            </button>
+            <button class="hero-chip" data-category="bbq" onclick="filterCircleTrucks('bbq')">
+              <i class="fa-solid fa-fire"></i> Smoked BBQ
+            </button>
+            <button class="hero-chip" data-category="burgers" onclick="filterCircleTrucks('burgers')">
+              <i class="fa-solid fa-burger"></i> Smash Burgers
+            </button>
+            <button class="hero-chip" data-category="tacos" onclick="filterCircleTrucks('tacos')">
+              <i class="fa-solid fa-pepper-hot"></i> Street Tacos
+            </button>
+            <button class="hero-chip" data-category="pizza" onclick="filterCircleTrucks('pizza')">
+              <i class="fa-solid fa-pizza-slice"></i> Wood-Fired
+            </button>
+          </div>
+
+          <div class="home2-hero-actions">
+            <a href="#radar" class="btn btn-primary">
+              <i class="fa-solid fa-compass"></i> EXPLORE FLEET RADAR
+            </a>
+            <a href="#cta" class="btn btn-outline-white">
+              <i class="fa-solid fa-calendar-check"></i> BOOK EVENT CATERING
+            </a>
+          </div>
+
+          <div class="home2-hero-metrics">
+            <div class="hero-metric-box">
+              <span class="hero-metric-val">520+</span>
+              <span class="hero-metric-lbl">Certified Trucks</span>
+            </div>
+            <div class="hero-metric-divider"></div>
+            <div class="hero-metric-box">
+              <span class="hero-metric-val">4.95 ★</span>
+              <span class="hero-metric-lbl">Average Rating</span>
+            </div>
+            <div class="hero-metric-divider"></div>
+            <div class="hero-metric-box">
+              <span class="hero-metric-val">100%</span>
+              <span class="hero-metric-lbl">Arrival Guarantee</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="home2-hero-visual">
+          <div class="home2-hero-card" id="heroVisualCard">
+            <div class="home2-hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="Vibrant Gourmet Street Food Truck in Evening Glow" class="home2-hero-img" loading="eager" fetchpriority="high">
+              <div class="home2-hero-gradient-overlay"></div>
+              
+              <div class="home2-hero-card-badge">
+                <i class="fa-solid fa-satellite-dish"></i> LIVE GPS BROADCAST
+              </div>
+
+              <div class="home2-hero-card-footer">
+                <div class="hero-card-caption">
+                  <h3>Downtown Gastro Fleet</h3>
+                  <p><i class="fa-solid fa-location-dot"></i> Arts & Culinary Plaza • 24 Active Fleets</p>
+                </div>
+                <span class="hero-live-pill"><span class="pulse-beacon"></span> OPEN NOW</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="home2-hero-floating-stat">
+            <div class="stat-icon-gold"><i class="fa-solid fa-bolt"></i></div>
+            <div class="stat-content">
+              <strong>12-Min Express Pickup</strong>
+              <small>Zero queues with Food Feast app</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact home2-about-section" id="ideology">
+      <div class="container">
+        
+        <div class="home2-about-grid">
+          
+          <div class="home2-about-content">
+            <span class="eyebrow-marker">STREET FOOD REIMAGINED</span>
+            <h2 class="home2-about-title">OUR STREET REVOLUTION & IDEOLOGY</h2>
+            <div class="section-gold-dash"></div>
+            
+            <p class="home2-about-para">
+              We believe Michelin-grade culinary craft shouldn't be locked within four walls. <strong>Food Feast liberates master pitmasters and executive chefs</strong>, delivering farm-to-truck gastronomy directly to your street corners and private celebrations.
+            </p>
+
+            <div class="home2-ideology-list">
+              <div class="ideology-item">
+                <div class="ideology-icon-wrap">
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div class="ideology-item-text">
+                  <strong>100% Farm-to-Truck Sourcing</strong>
+                  <p>Partnering with 60+ organic farms for daily harvested produce and pasture-raised meats.</p>
+                </div>
+              </div>
+
+              <div class="ideology-item">
+                <div class="ideology-icon-wrap">
+                  <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="ideology-item-text">
+                  <strong>Authentic Flame Mastery</strong>
+                  <p>Hickory wood pits, 900-degree stone ovens, and hand-tossed artisan dough daily.</p>
+                </div>
+              </div>
+
+              <div class="ideology-item">
+                <div class="ideology-icon-wrap">
+                  <i class="fa-solid fa-shield-heart"></i>
+                </div>
+                <div class="ideology-item-text">
+                  <strong>5-Star Hygiene & Safety Standard</strong>
+                  <p>Strict health permit vetting, temperature-controlled audits, and verified ratings.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#radar" class="btn btn-outline-white btn-sm" style="align-self: flex-start;">
+              DISCOVER OUR CHEFS <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="home2-about-cards-wrap">
+            
+            <div class="about-card-col-1">
+              <div class="about-photo-card tall">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" alt="Slow Smoked Artisanal BBQ Flame Grilling" loading="lazy">
+                <div class="about-photo-tag">
+                  <span><i class="fa-solid fa-fire"></i> Hickory Smoke Pit</span>
+                  <small>14-Hr Slow Cook</small>
+                </div>
+              </div>
+
+              <div class="about-photo-card">
+                <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=600&q=80" alt="Street Food Truck Night Pop-up Gathering" loading="lazy">
+                <div class="about-photo-tag">
+                  <span><i class="fa-solid fa-users"></i> Community Rallies</span>
+                  <small>Night Markets</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-card-col-2">
+              <div class="about-photo-card">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Artisan Smash Burger with Brioche Bun and Truffle Aioli" loading="lazy">
+                <div class="about-photo-tag">
+                  <span><i class="fa-solid fa-burger"></i> Wagyu Smash Craft</span>
+                  <small>Dry-Aged Beef</small>
+                </div>
+              </div>
+
+              <div class="about-photo-card tall">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Wood-fired Neapolitan Pizza Artisan Oven" loading="lazy">
+                <div class="about-photo-tag">
+                  <span><i class="fa-solid fa-pizza-slice"></i> 900° Stone Oven</span>
+                  <small>San Marzano</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-badge-established">
+              <strong>EST. 1993</strong>
+              <small>30+ Years Craft</small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact home2-circle-carousel-section" id="radar">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">REAL-TIME GPS SPOTLIGHT</span>
+          <h2 class="section-title-large">LIVE FOOD TRUCK CIRCLE RADAR</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Automated 2-second 3D circular spotlight showcase. Active certified gourmet kitchens rotating into center stage in real-time. Hover to pause or click any card to inspect.
+          </p>
+        </div>
+
+        <div class="carousel-controls-bar">
+          <div class="carousel-status-indicator">
+            <span class="pulse-beacon"></span>
+            <span id="carouselStatusText">Automated Live Radar: 2s Interval Active</span>
+          </div>
+          <div class="carousel-action-btns">
+            <button class="carousel-nav-btn" id="carouselPrevBtn" aria-label="Rotate previous truck" title="Previous truck">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="carousel-nav-btn" id="carouselTogglePlayBtn" aria-label="Pause automated rotation" title="Pause / Resume rotation">
+              <i class="fa-solid fa-pause" id="carouselPlayIcon"></i>
+            </button>
+            <button class="carousel-nav-btn" id="carouselNextBtn" aria-label="Rotate next truck" title="Next truck">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="circle-stage-viewport" id="circleStageViewport">
+          
+          <div class="radar-scan-line" id="radarScanLine"></div>
+
+          <div class="circle-stage-container" id="circleStageContainer">
+            
+            <div class="circle-truck-card" data-index="0" data-dish="ribs" data-modal="bbq_pit">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=500&q=80" alt="The Lone Star Pitmaster BBQ Truck" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">BBQ & SMOKED</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>CHEF SPECIAL</span>
+              </div>
+              <h3 class="circle-truck-name">Lone Star Pitmaster</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Arts Plaza • 0.4 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 4.9 (380)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="1" data-dish="burger" data-modal="burger_mobile">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Sizzle & Bun Smash Burger Mobile" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">WAGYU BURGERS</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>TOP RATED</span>
+              </div>
+              <h3 class="circle-truck-name">Sizzle & Bun Mobile</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Tech Park • 1.1 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 4.8 (420)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="2" data-dish="tacos" data-modal="birria_tacos">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" alt="El Fuego Birria and Quesatacos" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">OAXACAN BIRRIA</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>HERITAGE</span>
+              </div>
+              <h3 class="circle-truck-name">El Fuego Birria Bus</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Riverfront • 0.8 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 4.9 (610)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="3" data-dish="pizza" data-modal="pizza_crust">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80" alt="Rolling Crust Neapolitan Wood Fired Pizza" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">WOOD-FIRED PIZZA</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>ARTISAN 900°</span>
+              </div>
+              <h3 class="circle-truck-name">Rolling Crust Oven</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Brewery • 1.9 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 5.0 (290)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="4" data-dish="asian" data-modal="bao_wok">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80" alt="Dragon Wok and Bao Street Truck" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">ASIAN STREET WOK</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>STEAMED BAO</span>
+              </div>
+              <h3 class="circle-truck-name">Dragon Wok & Bao</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Hub • 1.4 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 4.7 (350)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="5" data-dish="dessert" data-modal="waffle_co">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80" alt="Sugar and Spice Belgian Waffle Truck" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">ARTISAN DESSERTS</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>SWEET TREAT</span>
+              </div>
+              <h3 class="circle-truck-name">Sugar & Spice Waffle</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Promenade • 0.5 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 5.0 (520)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="6" data-dish="greek" data-modal="gyro_express">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=500&q=80" alt="Santorini Gyro and Souvlaki Street Truck" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">GREEK SOUVLAKI</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>FLAME GRILLED</span>
+              </div>
+              <h3 class="circle-truck-name">Santorini Gyro Truck</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Center • 1.7 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 4.9 (280)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="circle-truck-card" data-index="7" data-dish="baja" data-modal="baja_seafood">
+              <div class="circle-avatar-wrapper">
+                <div class="circle-avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt="Pacific Coast Fresh Baja Seafood Cart" class="circle-truck-img" loading="lazy">
+                <span class="circle-cuisine-pill">BAJA SEAFOOD</span>
+              </div>
+              <div class="circle-card-badge-live">
+                <span class="pulse-dot-gold"></span>
+                <span>WILD CAUGHT</span>
+              </div>
+              <h3 class="circle-truck-name">Pacific Coast Baja</h3>
+              <p class="circle-truck-loc"><i class="fa-solid fa-location-dot"></i> Pier • 2.3 mi</p>
+              <div class="circle-truck-meta">
+                <span class="circle-truck-stars"><i class="fa-solid fa-star"></i> 4.8 (340)</span>
+                <span class="circle-view-btn">View Menu <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="circle-stage-pagination" id="circleStagePagination">
+          <div class="stage-dot active" data-jump="0"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="1"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="2"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="3"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="4"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="5"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="6"><span class="dot-progress"></span></div>
+          <div class="stage-dot" data-jump="7"><span class="dot-progress"></span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact home2-dish-points-section" id="chefs">
+      <div class="container">
+        
+        <div class="home2-dish-grid">
+          
+          <div class="home2-round-visual-col animate-from-left">
+            <div class="round-dish-orbit-stage">
+              <div class="orbit-outer-ring"></div>
+              <div class="orbit-inner-ring"></div>
+
+              <div class="round-dish-img-wrapper" onclick="openHome2DishModal('bbq_pit')" title="Click to view Signature Dish Details">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Overhead Grand Round Platter of Prime Smoked Wagyu Ribs & Gourmet Sides" class="round-dish-img" loading="lazy">
+              </div>
+
+              <div class="dish-floating-seal">
+                <i class="fa-solid fa-award seal-icon"></i>
+                <div>
+                  <strong>Chef's Master Selection</strong>
+                  <small>2026 Gold Standard Dish</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="home2-points-col animate-from-right">
+            <span class="eyebrow-marker">UNCOMPROMISING STANDARDS</span>
+            <h2 class="points-main-title">FOUR PILLARS OF GOURMET STREET LUXURY</h2>
+            <div class="section-gold-dash"></div>
+            <p class="points-subtitle">
+              Every dish served through the Food Feast platform adheres to our uncompromising four-part culinary philosophy.
+            </p>
+
+            <div class="home2-points-stack">
+              
+              <div class="luxury-point-card point-stagger-1">
+                <div class="point-number-emblem">01</div>
+                <div class="point-body">
+                  <div class="point-header-row">
+                    <h3 class="point-title">16-Hour Wood Slow Smoke</h3>
+                    <span class="point-badge-tag">Artisan Hardwood</span>
+                  </div>
+                  <p class="point-desc">
+                    Slow-cured with secret Texas 14-spice dry rubs over seasoned white oak and hickory embers for tenderness.
+                  </p>
+                </div>
+              </div>
+
+              <div class="luxury-point-card point-stagger-2">
+                <div class="point-number-emblem">02</div>
+                <div class="point-body">
+                  <div class="point-header-row">
+                    <h3 class="point-title">Farm-Direct Micro Sourcing</h3>
+                    <span class="point-badge-tag">100% Organic</span>
+                  </div>
+                  <p class="point-desc">
+                    Ethically harvested heirloom vegetables, grass-fed Angus beef blends, and fresh stone-ground corn.
+                  </p>
+                </div>
+              </div>
+
+              <div class="luxury-point-card point-stagger-3">
+                <div class="point-number-emblem">03</div>
+                <div class="point-body">
+                  <div class="point-header-row">
+                    <h3 class="point-title">Michelin-Trained Street Alchemists</h3>
+                    <span class="point-badge-tag">Executive Chefs</span>
+                  </div>
+                  <p class="point-desc">
+                    Culinary pioneers bringing fine-dining precision, inventive flavor pairings, and artistic plating onto the streets.
+                  </p>
+                </div>
+              </div>
+
+              <div class="luxury-point-card point-stagger-4">
+                <div class="point-number-emblem">04</div>
+                <div class="point-body">
+                  <div class="point-header-row">
+                    <h3 class="point-title">Zero-Waste Eco-Fleet Kitchens</h3>
+                    <span class="point-badge-tag">Sustainable Fleet</span>
+                  </div>
+                  <p class="point-desc">
+                    Solar-assisted mobile kitchen units utilizing 100% plant-based compostable tableware and zero single-use plastics.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact home2-process-section" id="services">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">EFFORTLESS 4-STEP WORKFLOW</span>
+          <h2 class="section-title-large">HOW THE FOOD FEAST PLATFORM WORKS</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            From discovering nearby certified mobile kitchens on live radar to hosting 2,000-guest VIP catering in four effortless steps.
+          </p>
+        </div>
+
+        <div class="home2-process-wrapper">
+          
+          <div class="process-flow-line" aria-hidden="true">
+            <div class="flow-beam-pulse"></div>
+          </div>
+
+          <div class="home2-process-grid">
+            
+            <div class="process-step-card process-stagger-1">
+              <div class="process-step-header">
+                <div class="process-icon-box">
+                  <i class="fa-solid fa-satellite-dish"></i>
+                </div>
+                <div class="process-step-badge">
+                  <span class="step-badge-num">01</span>
+                </div>
+              </div>
+              <h3 class="process-step-title">Live GPS Radar Discovery</h3>
+              <p class="process-step-desc">
+                Open the interactive radar to locate active mobile kitchens nearby, view daily secret menus, and check live wait times.
+              </p>
+              <div class="process-step-pill">
+                <span class="pill-dot"></span>
+                <span>Live Fleet Radar</span>
+              </div>
+            </div>
+
+            <div class="process-step-card process-stagger-2">
+              <div class="process-step-header">
+                <div class="process-icon-box">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <div class="process-step-badge">
+                  <span class="step-badge-num">02</span>
+                </div>
+              </div>
+              <h3 class="process-step-title">Express Pre-Order / Quote</h3>
+              <p class="process-step-desc">
+                Customize meal orders, pay securely online, or receive instant catering price estimates for weddings, galas, and private events.
+              </p>
+              <div class="process-step-pill">
+                <span class="pill-dot"></span>
+                <span>Instant Pricing</span>
+              </div>
+            </div>
+
+            <div class="process-step-card process-stagger-3">
+              <div class="process-step-header">
+                <div class="process-icon-box">
+                  <i class="fa-solid fa-fire-burner"></i>
+                </div>
+                <div class="process-step-badge">
+                  <span class="step-badge-num">03</span>
+                </div>
+              </div>
+              <h3 class="process-step-title">Live Sizzle & Flame Prep</h3>
+              <p class="process-step-desc">
+                Certified chefs craft each dish fresh over hardwood coals, flat-top grills, and 900° ovens with zero heat-lamp holding.
+              </p>
+              <div class="process-step-pill">
+                <span class="pill-dot"></span>
+                <span>Cooked To Order</span>
+              </div>
+            </div>
+
+            <div class="process-step-card process-stagger-4">
+              <div class="process-step-header">
+                <div class="process-icon-box">
+                  <i class="fa-solid fa-champagne-glasses"></i>
+                </div>
+                <div class="process-step-badge">
+                  <span class="step-badge-num">04</span>
+                </div>
+              </div>
+              <h3 class="process-step-title">Curbside Pickup or VIP Feast</h3>
+              <p class="process-step-desc">
+                Receive instant SMS alerts for line-free curbside pickup or host a turnkey on-site food truck feast with full-service cleanup.
+              </p>
+              <div class="process-step-pill">
+                <span class="pill-dot"></span>
+                <span>100% Satisfaction</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-compact home2-testimonials-section" id="reviews">
+      <div class="container">
+        
+        <div class="section-center-header">
+          <span class="eyebrow-marker">COMMUNITY TASTINGS & REVIEWS</span>
+          <h2 class="section-title-large">TRUSTED BY THOUSANDS OF FOODIES</h2>
+          <div class="section-gold-dash center"></div>
+          <p class="section-subtitle">
+            Read verified reviews from corporate event coordinators, wedding couples, and discerning street food critics across the nation.
+          </p>
+        </div>
+
+        <div class="testimonials-cards-grid">
+          
+          <div class="testimonial-card-item testimonial-stagger-1">
+            <div class="testimonial-card-glow"></div>
+            <div class="testimonial-top-row">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="verified-event-badge">
+                <i class="fa-solid fa-building-shield"></i> 1,200p Gala
+              </span>
+            </div>
+
+            <div class="testimonial-quote-wrap">
+              <i class="fa-solid fa-quote-left quote-corner-decor"></i>
+              <p class="testimonial-text">
+                "Food Feast revolutionized our company annual festival. We booked 6 diverse food trucks for 1,200 employees, and every attendee was served piping-hot gourmet meals in under 45 minutes without chaos!"
+              </p>
+            </div>
+
+            <div class="testimonial-author-row">
+              <div class="avatar-ring-wrap">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Sarah Jenkins portrait" class="author-avatar" loading="lazy">
+                <div class="avatar-mini-badge"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="author-details">
+                <div class="author-name-wrap">
+                  <strong>Sarah Jenkins</strong>
+                  <span class="verified-user-pill"><i class="fa-solid fa-circle-check"></i> Verified Host</span>
+                </div>
+                <small>VP Events • TechCorp Austin</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card-item testimonial-stagger-2">
+            <div class="testimonial-card-glow"></div>
+            <div class="testimonial-top-row">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="verified-event-badge">
+                <i class="fa-solid fa-heart"></i> Wedding Reception
+              </span>
+            </div>
+
+            <div class="testimonial-quote-wrap">
+              <i class="fa-solid fa-quote-left quote-corner-decor"></i>
+              <p class="testimonial-text">
+                "Having artisanal food trucks at our wedding was the best decision we made. The Birria taco truck and dessert waffle bus gave our reception an unforgettable luxury festival atmosphere that guests still rave about!"
+              </p>
+            </div>
+
+            <div class="testimonial-author-row">
+              <div class="avatar-ring-wrap">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="David Rivera portrait" class="author-avatar" loading="lazy">
+                <div class="avatar-mini-badge"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="author-details">
+                <div class="author-name-wrap">
+                  <strong>David & Clara Rivera</strong>
+                  <span class="verified-user-pill"><i class="fa-solid fa-circle-check"></i> Verified Couple</span>
+                </div>
+                <small>Hill Country Wedding Reception</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card-item testimonial-stagger-3">
+            <div class="testimonial-card-glow"></div>
+            <div class="testimonial-top-row">
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="verified-event-badge">
+                <i class="fa-solid fa-award"></i> Michelin Critic
+              </span>
+            </div>
+
+            <div class="testimonial-quote-wrap">
+              <i class="fa-solid fa-quote-left quote-corner-decor"></i>
+              <p class="testimonial-text">
+                "Food Feast isn't just a booking directory; it is an artisanal culinary movement. The caliber of pitmasters and chefs in their fleet easily rivals top Michelin Bib Gourmand brick-and-mortar kitchens."
+              </p>
+            </div>
+
+            <div class="testimonial-author-row">
+              <div class="avatar-ring-wrap">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Marcus Sterling portrait" class="author-avatar" loading="lazy">
+                <div class="avatar-mini-badge"><i class="fa-solid fa-check"></i></div>
+              </div>
+              <div class="author-details">
+                <div class="author-name-wrap">
+                  <strong>Marcus Sterling</strong>
+                  <span class="verified-user-pill"><i class="fa-solid fa-circle-check"></i> Lead Critic</span>
+                </div>
+                <small>Senior Editor • Street Gastro Guide</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="home2-cta-section" id="contact">
+      <div id="dashboard"></div>
+      <div class="container">
+        
+        <div class="home2-cta-box">
+          <div class="cta-box-glow"></div>
+          
+          <span class="cta-tag-badge">
+            <span class="pulse-beacon"></span>
+            <span>24/7 DEDICATED EVENT CONCIERGE</span>
+          </span>
+
+          <h2 class="home2-cta-title">READY TO BRING GOURMET TRUCKS TO YOUR CELEBRATION?</h2>
+          <p class="home2-cta-desc">
+            Lock in top-rated culinary trucks for corporate galas, private weddings, and community street rallies, or register your mobile kitchen with zero setup fees.
+          </p>
+
+          <div class="home2-cta-btn-row">
+            <a href="index.html#booking" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-paper-plane"></i> Request Quote
+            </a>
+            <a href="signup.html" class="btn btn-outline-white btn-lg">
+              <i class="fa-solid fa-truck-moving"></i> Join as Vendor
+            </a>
+          </div>
+
+          <div class="home2-cta-perks">
+            <span><i class="fa-solid fa-check"></i> Backup Truck Arrival Insurance</span>
+            <span><i class="fa-solid fa-check"></i> 100% Health Permit Verified</span>
+            <span><i class="fa-solid fa-check"></i> Instant Quotes & Free Cancellation</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="container footer-container">
+      
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <div class="logo-emblem">
+            <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">FOOD FEAST</span>
+            <span class="brand-subtitle">PREMIUM TRUCK DIRECTORY</span>
+          </div>
+        </a>
+        <p class="footer-bio">
+          The premier online food truck booking platform connecting hungry food enthusiasts with world-class mobile pitmasters and artisanal street kitchens.
+        </p>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home 1 (Signature)</a></li>
+          <li><a href="Home 2.html"><i class="fa-solid fa-angle-right"></i> Home 2 (Live Grid)</a></li>
+          <li><a href="#ideology"><i class="fa-solid fa-angle-right"></i> Street Manifesto</a></li>
+          <li><a href="#radar"><i class="fa-solid fa-angle-right"></i> Food Truck Radar</a></li>
+          <li><a href="#excellence"><i class="fa-solid fa-angle-right"></i> Chef Excellence</a></li>
+          <li><a href="#process"><i class="fa-solid fa-angle-right"></i> How It Works</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Popular Cuisines</h4>
+        <ul class="footer-links">
+          <li><a href="#radar" onclick="filterCircleTrucks('bbq')"><i class="fa-solid fa-angle-right"></i> Smoked Texas BBQ</a></li>
+          <li><a href="#radar" onclick="filterCircleTrucks('burgers')"><i class="fa-solid fa-angle-right"></i> Gourmet Smash Burgers</a></li>
+          <li><a href="#radar" onclick="filterCircleTrucks('tacos')"><i class="fa-solid fa-angle-right"></i> Oaxacan Street Tacos</a></li>
+          <li><a href="#radar" onclick="filterCircleTrucks('pizza')"><i class="fa-solid fa-angle-right"></i> Wood-Fired Pizza</a></li>
+          <li><a href="#radar" onclick="filterCircleTrucks('asian')"><i class="fa-solid fa-angle-right"></i> Asian Bao & Noodles</a></li>
+          <li><a href="#radar" onclick="filterCircleTrucks('dessert')"><i class="fa-solid fa-angle-right"></i> Artisanal Waffles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">For Vendors</h4>
+        <ul class="footer-links">
+          <li><a href="signup.html"><i class="fa-solid fa-angle-right"></i> Vendor Sign Up</a></li>
+          <li><a href="login.html"><i class="fa-solid fa-angle-right"></i> Vendor Dashboard</a></li>
+          <li><a href="#excellence"><i class="fa-solid fa-angle-right"></i> Health & Safety Guidelines</a></li>
+          <li><a href="404.html"><i class="fa-solid fa-angle-right"></i> 404 Page</a></li>
+          <li><a href="comingsoon.html"><i class="fa-solid fa-angle-right"></i> Coming Soon</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="footer-heading">Street Food Alerts</h4>
+        <p class="newsletter-desc">Get weekly notifications when secret gourmet food trucks pop up in your area.</p>
+        <form class="footer-newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+          <div class="newsletter-input-group">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+        <div class="app-badges">
+          <span class="app-badge-pill"><i class="fa-brands fa-apple"></i> App Store</span>
+          <span class="app-badge-pill"><i class="fa-brands fa-google-play"></i> Google Play</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">
+          &copy; 2026 <strong>Food Feast Inc.</strong> All rights reserved. Crafted with passion for vibrant street food culture.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+          <span>•</span>
+          <a href="#">Security & Hygiene</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="quickViewTitle">
+    <div class="modal-card quick-view-card">
+      <button class="modal-close-btn" onclick="closeQuickViewModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="quick-view-grid">
+        <div class="quick-view-img-box">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" id="quickViewImg" alt="Special Dish preview">
+          <div class="quick-view-badge" id="quickViewBadge">Chef Signature</div>
+        </div>
+
+        <div class="quick-view-content">
+          <span class="quick-view-category" id="quickViewCategory">SMOKED BBQ & GRILLS</span>
+          <h3 class="quick-view-title" id="quickViewTitle">Grand Wagyu Ribs & Sides</h3>
+          <div class="quick-view-price-row">
+            <span class="quick-view-price" id="quickViewPrice">$35.50</span>
+            <span class="quick-view-stars"><i class="fa-solid fa-star"></i> 4.9 (240 reviews)</span>
+          </div>
+
+          <p class="quick-view-desc" id="quickViewDesc">
+            Signature 16-hour hickory smoked St. Louis style ribs drenched in house bourbon brown sugar glaze. Served with hand-cut roasted potato wedges, pickled red slaw, and homemade honey BBQ dips.
+          </p>
+
+          <div class="quick-view-truck-source">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <small>Served by:</small>
+              <strong id="quickViewTruckName">The Lone Star Pitmaster</strong>
+            </div>
+          </div>
+
+          <div class="quick-view-actions">
+            <div class="quantity-picker">
+              <button type="button" onclick="adjustQty(-1)">-</button>
+              <span id="quickViewQty">1</span>
+              <button type="button" onclick="adjustQty(1)">+</button>
+            </div>
+            <button class="btn btn-primary flex-grow" onclick="simulateAddToCart()">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Order • <span id="quickViewTotalBtn">$35.50</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="Home 2.js"></script>
+
+  <div id="DEBUG_BOX" style="display:none"></div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const hc = document.querySelector('.header-container');
+        const logo = document.querySelector('.brand-logo');
+        const actions = document.querySelector('.header-actions');
+        const theme = document.querySelector('.theme-toggle-btn');
+        const rtl = document.querySelector('.rtl-toggle-btn');
+        const menu = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('.main-nav');
+        const login = document.querySelector('.login-btn');
+        const box = {
+          windowWidth: window.innerWidth,
+          hc: hc ? hc.getBoundingClientRect() : null,
+          logo: logo ? logo.getBoundingClientRect() : null,
+          actions: actions ? actions.getBoundingClientRect() : null,
+          theme: theme ? theme.getBoundingClientRect() : null,
+          rtl: rtl ? rtl.getBoundingClientRect() : null,
+          menu: menu ? menu.getBoundingClientRect() : null,
+          navDisplay: nav ? getComputedStyle(nav).display : null,
+          loginDisplay: login ? getComputedStyle(login).display : null,
+          menuDisplay: menu ? getComputedStyle(menu).display : null,
+        };
+        document.getElementById('DEBUG_BOX').textContent = JSON.stringify(box);
+      }, 50);
+    });
+  </script>
+  </body>
+</html>

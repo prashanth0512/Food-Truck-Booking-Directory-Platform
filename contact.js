@@ -35,8 +35,11 @@ function initTheme() {
     localStorage.setItem('foodfeast_theme', canonicalTheme);
     
     if (themeToggleBtn) {
-      const iconType = canonicalTheme === 'light' ? 'moon' : 'sun';
+      const isDark = (canonicalTheme === 'dark');
+      const iconType = isDark ? 'sun' : 'moon';
       themeToggleBtn.innerHTML = `<i data-lucide="${iconType}" id="themeLucideIcon" class="theme-lucide-icon"></i>`;
+      themeToggleBtn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+      themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
       if (window.lucide) {
         window.lucide.createIcons();
       }

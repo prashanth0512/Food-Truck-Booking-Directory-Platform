@@ -1185,9 +1185,13 @@ function cycleThemeMode() {
 }
 
 function updateThemeLucideIcon(theme) {
-  const icon = document.getElementById('themeLucideIcon');
-  if (icon) {
-    icon.setAttribute('data-lucide', theme === 'light' ? 'moon' : 'sun');
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  if (themeToggleBtn) {
+    const isDark = (theme === 'dark' || theme === 'charcoal');
+    const iconType = isDark ? 'sun' : 'moon';
+    themeToggleBtn.innerHTML = `<i data-lucide="${iconType}" id="themeLucideIcon" class="theme-lucide-icon"></i>`;
+    themeToggleBtn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+    themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
     if (window.lucide) window.lucide.createIcons();
   }
 }
