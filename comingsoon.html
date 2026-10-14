@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Coming Soon — Food Feast | The Next Flavor Revolution</title>
+  <meta name="description" content="Something delicious is brewing! Food Feast is launching in 40 days. Sign up for early VIP access to 500+ gourmet food trucks, live GPS fleet tracking, and private catering.">
+  <meta name="keywords" content="food feast coming soon, food truck launch, gourmet food trucks countdown">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="comingsoon.css">
+</head>
+<body class="page-comingsoon-body">
+
+  <div class="ambient-background">
+    <div class="ambient-orb orb-primary"></div>
+    <div class="ambient-orb orb-accent"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div class="canvas-confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+  <div class="viewport-comingsoon-container">
+
+    <!-- Top Navigation Bar (Left: Brand, Right: Theme & RTL) -->
+    <header class="top-bar-fixed" role="banner">
+      
+      <!-- Top Left: Brand Name & Logo -->
+      <a href="index.html" class="brand-link" id="brandLogoLink" aria-label="Food Feast Home">
+        <div class="brand-logo-emblem">
+          <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM FOOD TRUCKS</span>
+        </div>
+      </a>
+
+      <!-- Top Right: Theme Toggle & RTL Button -->
+      <div class="top-actions" role="toolbar" aria-label="Page Settings">
+        <button type="button" class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+        </button>
+
+        <button type="button" class="action-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle Text Direction" title="Switch Direction (LTR / RTL)">
+          <span id="rtlText">RTL</span>
+        </button>
+      </div>
+
+    </header>
+
+    <!-- Center Stage (Moving Animation + 40 Days Countdown + Text + Actions) -->
+    <main class="center-content-stage" id="centerStage" role="main">
+
+      <!-- Moving Coming Soon Banner & Animated Truck Scene -->
+      <div class="anim-comingsoon-scene" id="animComingScene" aria-hidden="true">
+        
+        <!-- Floating Chef & Culinary Embers -->
+        <div class="culinary-floating-field">
+          <div class="floating-flair flair-fire" style="--delay: 0s; --x: -180px; --y: -30px;">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <div class="floating-flair flair-utensils" style="--delay: 1.4s; --x: 190px; --y: -40px;">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="floating-flair flair-burger" style="--delay: 0.7s; --x: -200px; --y: 35px;">
+            <i class="fa-solid fa-burger"></i>
+          </div>
+          <div class="floating-flair flair-bell" style="--delay: 2s; --x: 180px; --y: 40px;">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+        </div>
+
+        <!-- Animated Floating Truck & Steam Trail -->
+        <div class="moving-truck-stage">
+          <div class="truck-steam-emitter">
+            <span class="steam-bubble bubble-1"></span>
+            <span class="steam-bubble bubble-2"></span>
+            <span class="steam-bubble bubble-3"></span>
+          </div>
+          
+          <div class="interactive-truck-chassis" id="truckChassis" title="Click to honk the launch horn!" role="button" tabindex="0" aria-label="Food Feast Launch Truck">
+            <div class="honk-speech-bubble" id="honkBubble">
+              <span>GET READY! 🚚✨</span>
+            </div>
+            <img src="assets/hero_truck_transparent.png" alt="Food Feast Truck Cruiser" class="truck-graphic" id="truckGraphic">
+          </div>
+
+          <div class="speed-lines-track">
+            <div class="speed-stripe stripe-1"></div>
+            <div class="speed-stripe stripe-2"></div>
+            <div class="speed-stripe stripe-3"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 40 Days Live Countdown Grid (Days, Hours, Minutes, Seconds) -->
+      <section class="countdown-section" aria-label="Launch Countdown Timer">
+        
+        <div class="countdown-grid" id="countdownGrid">
+          
+          <!-- Days Card -->
+          <div class="timer-card" data-unit="days">
+            <div class="timer-card-inner">
+              <span class="timer-digit" id="daysVal">40</span>
+              <span class="timer-label">DAYS</span>
+            </div>
+            <div class="timer-progress-bar">
+              <div class="timer-progress-fill" id="daysProgress"></div>
+            </div>
+          </div>
+
+          <span class="timer-separator" aria-hidden="true">:</span>
+
+          <!-- Hours Card -->
+          <div class="timer-card" data-unit="hours">
+            <div class="timer-card-inner">
+              <span class="timer-digit" id="hoursVal">00</span>
+              <span class="timer-label">HOURS</span>
+            </div>
+            <div class="timer-progress-bar">
+              <div class="timer-progress-fill" id="hoursProgress"></div>
+            </div>
+          </div>
+
+          <span class="timer-separator" aria-hidden="true">:</span>
+
+          <!-- Minutes Card -->
+          <div class="timer-card" data-unit="minutes">
+            <div class="timer-card-inner">
+              <span class="timer-digit" id="minsVal">00</span>
+              <span class="timer-label">MINUTES</span>
+            </div>
+            <div class="timer-progress-bar">
+              <div class="timer-progress-fill" id="minsProgress"></div>
+            </div>
+          </div>
+
+          <span class="timer-separator" aria-hidden="true">:</span>
+
+          <!-- Seconds Card -->
+          <div class="timer-card" data-unit="seconds">
+            <div class="timer-card-inner">
+              <span class="timer-digit" id="secsVal">00</span>
+              <span class="timer-label">SECONDS</span>
+            </div>
+            <div class="timer-progress-bar">
+              <div class="timer-progress-fill" id="secsProgress"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Text Content & Interactive Email Notification -->
+      <div class="content-text-group">
+        
+        <div class="launch-badge">
+          <span class="beacon-pulse-dot"></span>
+          <span class="badge-text">GRAND LAUNCH IN 40 DAYS • FLEET PREPARATION</span>
+        </div>
+
+        <h1 class="coming-headline">
+          SOMETHING DELICIOUS IS <span class="highlight-gradient">BREWING</span>
+        </h1>
+
+        <p class="coming-description">
+          We are firing up our premier gourmet street food network. 500+ executive chefs, live satellite food truck radars, and instant catering reservations are rolling into your city soon!
+        </p>
+
+        <!-- VIP Notify Subscription Form -->
+        <form class="notify-subscription-form" id="notifyForm" novalidate>
+          <div class="input-pill-wrapper">
+            <i class="fa-regular fa-envelope input-leading-icon" aria-hidden="true"></i>
+            <input 
+              type="email" 
+              class="notify-email-input" 
+              id="notifyEmail" 
+              placeholder="Enter your email for VIP launch invite..." 
+              autocomplete="email" 
+              required
+              aria-label="Email address for launch notification"
+            >
+            <button type="submit" class="btn btn-primary btn-submit-notify" id="notifySubmitBtn">
+              <i class="fa-solid fa-bell"></i>
+              <span>Notify Me</span>
+            </button>
+          </div>
+          <div class="subscription-feedback" id="subscriptionFeedback" aria-live="polite"></div>
+        </form>
+
+        <!-- Action Navigation Buttons -->
+        <div class="coming-actions-cluster">
+          <a href="index.html" class="btn btn-secondary btn-action" id="homeCta">
+            <i class="fa-solid fa-house"></i>
+            <span>Return to Feast</span>
+          </a>
+
+          <a href="index.html#directory" class="btn btn-outline-primary btn-action" id="directoryCta">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Explore Live Fleets</span>
+          </a>
+
+          <a href="Home 2.html" class="btn btn-glass-burgundy btn-action" id="radarCta">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <span>Live Radar</span>
+          </a>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Status Ribbon (Zero Footer) -->
+    <aside class="bottom-status-ribbon" aria-label="Launch readiness status">
+      <div class="status-ribbon-content">
+        <span class="ribbon-item"><i class="fa-solid fa-satellite-dish"></i> STATUS: DISPATCH CODE GREEN</span>
+        <span class="ribbon-divider">•</span>
+        <span class="ribbon-item"><i class="fa-solid fa-truck-moving"></i> 520+ FLEETS ONBOARDING</span>
+        <span class="ribbon-divider">•</span>
+        <span class="ribbon-item keyboard-hint"><i class="fa-regular fa-keyboard"></i> Press <kbd>H</kbd> for Home • <kbd>T</kbd> for Theme</span>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="comingsoon.js"></script>
+</body>
+</html>

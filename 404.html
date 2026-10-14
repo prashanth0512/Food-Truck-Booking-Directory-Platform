@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>404 — Page Not Found | Food Feast</title>
+  <meta name="description" content="Lost on the flavor trail? The gourmet food truck or culinary recipe you are looking for has taken a detour. Return to Food Feast to find live fleets and daily specials.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="404.css">
+</head>
+<body class="page-404-body">
+
+  <div class="ambient-background">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-grid-overlay"></div>
+  </div>
+
+  <div class="viewport-404-container">
+
+    <!-- Top Navigation Bar (Left: Brand, Right: Controls) -->
+    <header class="top-bar-fixed" role="banner">
+      
+      <!-- Top Left: Brand Name & Logo -->
+      <a href="index.html" class="brand-link" id="brandLogoLink" aria-label="Food Feast Homepage">
+        <div class="brand-logo-emblem">
+          <img src="assets/logo.png" alt="Food Feast Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-title">FOOD FEAST</span>
+          <span class="brand-subtitle">PREMIUM FOOD TRUCKS</span>
+        </div>
+      </a>
+
+      <!-- Top Right: Theme Toggle & RTL Button -->
+      <div class="top-actions" role="toolbar" aria-label="Page Settings">
+        <button type="button" class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Toggle Light / Dark Mode">
+          <i data-lucide="sun" id="themeLucideIcon" class="theme-lucide-icon"></i>
+        </button>
+
+        <button type="button" class="action-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle Text Direction" title="Switch Direction (LTR / RTL)">
+          <span id="rtlText">RTL</span>
+        </button>
+      </div>
+
+    </header>
+
+    <!-- Center Interactive 404 Experience -->
+    <main class="center-content-stage" id="centerStage" role="main">
+
+      <!-- Moving 404 Animation Scene -->
+      <div class="anim-404-scene" id="anim404Scene" aria-hidden="true">
+        
+        <!-- Background 404 Floating Typography -->
+        <div class="digits-row">
+          <span class="digit digit-left" data-value="4">4</span>
+          
+          <div class="digit-center-portal" title="Click to spin the compass!">
+            <div class="portal-outer-ring"></div>
+            <div class="portal-radar-sweep"></div>
+            <div class="portal-dish-plate">
+              <i class="fa-solid fa-utensils portal-utensils-icon"></i>
+            </div>
+            <span class="zero-label">0</span>
+          </div>
+
+          <span class="digit digit-right" data-value="4">4</span>
+        </div>
+
+        <!-- Floating Culinary Particles in Orbit -->
+        <div class="culinary-particles-field">
+          <div class="particle-item particle-burger" style="--delay: 0s; --x: -160px; --y: -50px;">
+            <i class="fa-solid fa-burger"></i>
+          </div>
+          <div class="particle-item particle-pizza" style="--delay: 1.2s; --x: 170px; --y: -60px;">
+            <i class="fa-solid fa-pizza-slice"></i>
+          </div>
+          <div class="particle-item particle-pepper" style="--delay: 0.6s; --x: -180px; --y: 40px;">
+            <i class="fa-solid fa-pepper-hot"></i>
+          </div>
+          <div class="particle-item particle-coffee" style="--delay: 1.8s; --x: 180px; --y: 50px;">
+            <i class="fa-solid fa-mug-hot"></i>
+          </div>
+          <div class="particle-item particle-pin" style="--delay: 2.2s; --x: 0px; --y: -90px;">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+        </div>
+
+        <!-- Animated Road Strip & Driving Food Truck -->
+        <div class="truck-road-track">
+          <div class="road-surface">
+            <div class="road-center-stripes"></div>
+          </div>
+
+          <div class="food-truck-unit" id="foodTruckUnit" title="Click the food truck for a honk!" role="button" tabindex="0" aria-label="Interactive Food Truck">
+            
+            <div class="honk-bubble" id="honkBubble" aria-hidden="true">
+              <span>BEEP BEEP! 🚚💨</span>
+            </div>
+
+            <div class="headlight-beam"></div>
+
+            <div class="truck-graphic-wrapper">
+              <img src="assets/hero_truck_transparent.png" alt="Animated Food Truck Cruiser" class="truck-img" id="truckImg">
+            </div>
+
+            <!-- Exhaust Smoke Puffs -->
+            <div class="exhaust-smoke-container">
+              <span class="smoke-puff puff-1"></span>
+              <span class="smoke-puff puff-2"></span>
+              <span class="smoke-puff puff-3"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Text Content Below the Animation -->
+      <div class="content-text-group">
+        
+        <div class="error-badge">
+          <span class="badge-pulse-dot"></span>
+          <span class="badge-text">STATUS 404 • DETOUR AHEAD</span>
+        </div>
+
+        <h1 class="error-title">
+          LOST ON THE <span class="highlight-gradient">FLAVOR TRAIL</span>
+        </h1>
+
+        <p class="error-description">
+          The culinary stop or food truck menu you are looking for has taken a secret detour, packed up for the evening, or moved to unmapped coordinates.
+        </p>
+
+        <!-- Navigation Action Buttons -->
+        <div class="error-actions-cluster">
+          <a href="index.html" class="btn btn-primary btn-action" id="homeCta">
+            <i class="fa-solid fa-house"></i>
+            <span>Return to Feast</span>
+          </a>
+
+          <a href="index.html#directory" class="btn btn-secondary btn-action" id="directoryCta">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Explore Food Trucks</span>
+          </a>
+
+          <a href="Home 2.html" class="btn btn-outline-primary btn-action" id="radarCta">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <span>Live Radar</span>
+          </a>
+
+          <button type="button" class="btn btn-glass-burgundy btn-action" id="backCta">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Previous Page</span>
+          </button>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Coordinates Ribbon (No Footer) -->
+    <aside class="bottom-status-ribbon" aria-label="System status">
+      <div class="status-ribbon-content">
+        <span class="ribbon-item"><i class="fa-solid fa-satellite-dish"></i> GPS FIX: 404.00° N, 0.00° W</span>
+        <span class="ribbon-divider">•</span>
+        <span class="ribbon-item"><i class="fa-solid fa-truck-ramp-box"></i> DISPATCH: STANDBY</span>
+        <span class="ribbon-divider">•</span>
+        <span class="ribbon-item keyboard-hint"><i class="fa-regular fa-keyboard"></i> Press <kbd>H</kbd> for Home or <kbd>Esc</kbd> to return</span>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="404.js"></script>
+</body>
+</html>

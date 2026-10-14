@@ -389,12 +389,17 @@ ul {
 }
 
 [data-theme="light"] .btn-secondary,
-[data-theme="light"] .btn-outline-white {
+[data-theme="burgundy"] .btn-secondary,
+[data-theme="light"] .btn-outline-white,
+[data-theme="burgundy"] .btn-outline-white {
   border-color: #B8907E;
   background: #ffffff;
+  color: var(--color-text-primary);
 }
 [data-theme="light"] .btn-secondary:hover,
-[data-theme="light"] .btn-outline-white:hover {
+[data-theme="burgundy"] .btn-secondary:hover,
+[data-theme="light"] .btn-outline-white:hover,
+[data-theme="burgundy"] .btn-outline-white:hover {
   background: var(--color-surface-secondary);
   border-color: var(--color-primary);
   color: var(--color-primary);
@@ -2219,12 +2224,26 @@ ul {
   color: var(--text-dim);
 }
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text-dim);
+  text-decoration: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.footer-links a i {
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  opacity: 0.85;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 .footer-links a:hover {
   color: var(--color-primary);
   transform: translateX(4px);
+}
+.footer-links a:hover i {
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 .newsletter-desc {

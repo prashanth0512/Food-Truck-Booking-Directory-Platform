@@ -1712,8 +1712,11 @@ ul, ol {
   box-sizing: border-box;
 }
 [data-theme="light"] .btn-outline-white,
+[data-theme="burgundy"] .btn-outline-white,
 [data-theme="light"] .btn-secondary,
-[data-theme="light"] .btn-outline {
+[data-theme="burgundy"] .btn-secondary,
+[data-theme="light"] .btn-outline,
+[data-theme="burgundy"] .btn-outline {
   background: #ffffff;
   border: 1.5px solid #B8907E;
   color: var(--color-text-primary);
@@ -1728,8 +1731,11 @@ ul, ol {
   color: var(--color-primary);
 }
 [data-theme="light"] .btn-outline-white:hover,
+[data-theme="burgundy"] .btn-outline-white:hover,
 [data-theme="light"] .btn-secondary:hover,
-[data-theme="light"] .btn-outline:hover {
+[data-theme="burgundy"] .btn-secondary:hover,
+[data-theme="light"] .btn-outline:hover,
+[data-theme="burgundy"] .btn-outline:hover {
   background: var(--color-surface-secondary);
   border-color: var(--color-primary);
   color: var(--color-primary);
